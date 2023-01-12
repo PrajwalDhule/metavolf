@@ -1,0 +1,35 @@
+.login-page-container {
+  background-color: #333333;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.login-page-container label {
+  margin-right: 10px;
+}
+
+.login-page-container input {
+  background-color: #222222;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+
+.login-page-container button {
+  background-color: #222222;
+  color: #ffffff;
+  border: none;
+  padding: 8px;
+  margin-left: 10px;
+}
+/*# sourceMappingURL=Login.css.map */
