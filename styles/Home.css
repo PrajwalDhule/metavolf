@@ -36,18 +36,17 @@
 
 .home-body h1 {
   color: white;
-  font-size: 5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-}
-
-.home-body h1 p:nth-child(1) {
-  background: linear-gradient(269.97deg, #ff4c00 61.29%, #fcc4ac 76.06%, #f06930 90.46%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  --bg-size: 400%;
+  --color-one: hsl(18, 100%, 50%);
+  --color-two: hsl(0, 0%, 100%);
+  font-size: clamp(3rem, 25vmin, 5rem);
+  background: -webkit-gradient(linear, left top, right top, from(var(--color-one)), color-stop(var(--color-two)), to(var(--color-one))) 0 0/var(--bg-size) 100%;
+  background: linear-gradient(90deg, var(--color-one), var(--color-two), var(--color-one)) 0 0/var(--bg-size) 100%;
+  color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
 }
 
 .home-body h1 p + p {
@@ -60,7 +59,7 @@
   font-size: 1.25rem;
   font-weight: 200;
   width: 40vw;
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 
 .home-body .btn-container button {
@@ -72,14 +71,43 @@
   margin-top: 4em;
   width: 16em;
   background-color: #110d26;
+  border: 2px solid #110d26;
   color: #fff7ae;
   cursor: pointer;
 }
 
+.home-body .btn-container button:hover {
+  border: 2px solid #533fb7;
+  background-color: #533fb7;
+  color: #110d26;
+}
+
 .home-body .btn-container button + button {
   background-color: white;
+  border: 2px solid white;
   color: #110d26;
   margin-left: 3em;
   font-weight: 500;
+}
+
+.home-body .btn-container button + button:hover {
+  color: white;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-body > h1 {
+    -webkit-animation: move-bg 16s linear infinite;
+            animation: move-bg 16s linear infinite;
+  }
+  @-webkit-keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+  @keyframes move-bg {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
 }
 /*# sourceMappingURL=Home.css.map */
