@@ -1,28 +1,32 @@
-.login-page-container {
-  background-color: #333333;
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.login-page-container label {
-  margin-right: 10px;
-}
+$dark-bg: #030a15;
+$dark-blue: #09172d;
 
-.login-page-container input {
-  background-color: #222222;
-  color: #ffffff;
-  border: none;
-  padding: 8px;
-  margin-bottom: 10px;
-}
-
-.login-page-container button {
-  background-color: #222222;
-  color: #ffffff;
-  border: none;
-  padding: 8px;
-  margin-left: 10px;
+.login-body {
+  .login-page-container {
+    background-color: $dark-blue;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    label {
+      margin-right: 10px;
+    }
+    input {
+      background-color: #222222;
+      color: #ffffff;
+      border: none;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #222222;
+      color: #ffffff;
+      border: none;
+      padding: 8px;
+      margin-left: 10px;
+    }
+  }
 }

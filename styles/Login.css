@@ -1,5 +1,6 @@
-.login-page-container {
-  background-color: #333333;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.login-body .login-page-container {
+  background-color: #09172d;
   color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,11 +14,11 @@
   height: 100vh;
 }
 
-.login-page-container label {
+.login-body .login-page-container label {
   margin-right: 10px;
 }
 
-.login-page-container input {
+.login-body .login-page-container input {
   background-color: #222222;
   color: #ffffff;
   border: none;
@@ -25,7 +26,7 @@
   margin-bottom: 10px;
 }
 
-.login-page-container button {
+.login-body .login-page-container button {
   background-color: #222222;
   color: #ffffff;
   border: none;

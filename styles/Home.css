@@ -1,0 +1,85 @@
+.bg-text {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  width: 100vw;
+  -webkit-transform: translate(0, -55%);
+          transform: translate(0, -55%);
+  font-family: "Poppins";
+  font-size: 12rem;
+  font-weight: 700;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  text-stroke: 1px rgba(255, 255, 255, 0.1);
+  color: transparent;
+}
+
+.home-body {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Poppins";
+  z-index: 1;
+}
+
+.home-body h1 {
+  color: white;
+  font-size: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-body h1 p:nth-child(1) {
+  background: linear-gradient(269.97deg, #ff4c00 61.29%, #fcc4ac 76.06%, #f06930 90.46%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.home-body h1 p + p {
+  margin-left: 0.25em;
+}
+
+.home-body p.desc {
+  color: white;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 200;
+  width: 40vw;
+  margin-top: 0.5em;
+}
+
+.home-body .btn-container button {
+  border: none;
+  border-radius: 1px;
+  font-family: "Poppins";
+  font-size: 1rem;
+  padding: 1.25em 0;
+  margin-top: 4em;
+  width: 16em;
+  background-color: #110d26;
+  color: #fff7ae;
+  cursor: pointer;
+}
+
+.home-body .btn-container button + button {
+  background-color: white;
+  color: #110d26;
+  margin-left: 3em;
+  font-weight: 500;
+}
+/*# sourceMappingURL=Home.css.map */

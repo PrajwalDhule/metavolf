@@ -83,12 +83,20 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  position: relative;
+  z-index: -10;
 }
 
-.body {
+/* #__next {
+  position: relative;
+  z-index: -10;
+} */
+
+.outer-body {
+  position: relative;
   height: 100vh;
   width: 100vw;
-  background-color: #222222;
+  background-color: #13005a;
   overflow: hidden;
   margin: 0;
   padding: 0;
