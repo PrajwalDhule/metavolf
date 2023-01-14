@@ -1,32 +1,75 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+$blue-bg: #13005a;
 $dark-bg: #030a15;
-$dark-blue: #09172d;
+$dark-blue: #0c0039;
+$light-blue: #866fdb;
+$green: #377506;
 
 .login-body {
+  background-color: $blue-bg;
   .login-page-container {
-    background-color: $dark-blue;
     color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     height: 100vh;
-    label {
-      margin-right: 10px;
+    img {
+      height: 12vh;
+      margin-bottom: -2rem;
     }
-    input {
-      background-color: #222222;
-      color: #ffffff;
-      border: none;
-      padding: 8px;
-      margin-bottom: 10px;
+    h1 {
+      font-weight: 500;
     }
-    button {
-      background-color: #222222;
-      color: #ffffff;
-      border: none;
-      padding: 8px;
-      margin-left: 10px;
+    form {
+      background-color: $dark-blue;
+      display: flex;
+      justify-content: center;
+      // align-items: flex-start;
+      flex-direction: column;
+      width: 30vw;
+      padding: 1.75em;
+      border-radius: 5px;
+      label {
+        font-weight: 200;
+      }
+      input {
+        background-color: $blue-bg;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 200;
+        border: none;
+        padding: 10px;
+        margin: 15px 0;
+        border-radius: 5px;
+        // &:focus {
+        //   border: none;
+        // }
+      }
+      button {
+        background-color: $green;
+        color: white;
+        width: 100%;
+        border: none;
+        padding: 8px;
+        border-radius: 5px;
+        font-family: "Poppins";
+        font-size: 1rem;
+        // font-weight: 200;
+        margin: 15px 0 5px 0;
+      }
+    }
+    .guide {
+      font-weight: 300;
+      a {
+        color: $light-blue;
+      }
+    }
+    .bottom-links {
+      font-weight: 300;
+      color: $light-blue;
+      a + a {
+        margin-left: 2em;
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,13 +14,15 @@ function Login() {
   return (
     <div className="login-body body">
       <div className="login-page-container">
+        <img src="/logo_w_o_text.png" />
+        <h1>Login to Metavolf</h1>
         <form onSubmit={handleSubmit}>
           <label for="email">Email address:</label>
           <input
             type="text"
             id="email"
             value={email}
-            onChange={(event) => setUsername(event.target.value)}
+            onChange={(event) => setEmail(event.target.value)}
           />
           <label for="password">Password:</label>
           <input
@@ -30,6 +33,15 @@ function Login() {
           />
           <button type="submit">Login</button>
         </form>
+        <p className="guide">
+          Need help?
+          <Link href="/"> Guide</Link>
+        </p>
+        <div className="bottom-links">
+          <Link href="/">Terms</Link>
+          <Link href="/">Privacy</Link>
+          <Link href="/">Contact Metavolf</Link>
+        </div>
       </div>
     </div>
   );

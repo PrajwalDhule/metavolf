@@ -60,10 +60,10 @@
 .hero-body .hero-content p.desc {
   color: white;
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 200;
-  width: 40vw;
-  margin-top: 1em;
+  width: 45vw;
+  margin-top: 0.5em;
 }
 
 .hero-body .hero-content .btn-container button {
@@ -74,8 +74,8 @@
   padding: 1.25em 0;
   margin-top: 4em;
   width: 16em;
-  background-color: #110d26;
-  border: 2px solid #110d26;
+  background-color: #0c0039;
+  border: 2px solid #0c0039;
   color: #fff7ae;
   cursor: pointer;
 }
@@ -83,13 +83,13 @@
 .hero-body .hero-content .btn-container button:hover {
   border: 2px solid #533fb7;
   background-color: #533fb7;
-  color: #110d26;
+  color: #0c0039;
 }
 
 .hero-body .hero-content .btn-container a + a button {
   background-color: white;
   border: 2px solid white;
-  color: #110d26;
+  color: #0c0039;
   margin-left: 3em;
   font-weight: 500;
 }
@@ -99,7 +99,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .home-body > h1 {
+  .hero-body h1 {
     -webkit-animation: move-bg 16s linear infinite;
             animation: move-bg 16s linear infinite;
   }

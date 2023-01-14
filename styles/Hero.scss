@@ -1,4 +1,4 @@
-$dark-blue: #110d26;
+$dark-blue: #0c0039;
 $yellow: #fff7ae;
 
 .bg-text {
@@ -62,10 +62,10 @@ $yellow: #fff7ae;
     p.desc {
       color: white;
       text-align: center;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
       font-weight: 200;
-      width: 40vw;
-      margin-top: 1em;
+      width: 45vw;
+      margin-top: 0.5em;
     }
     .btn-container {
       button {
@@ -103,7 +103,7 @@ $yellow: #fff7ae;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .home-body > h1 {
+  .hero-body h1 {
     animation: move-bg 16s linear infinite;
   }
   @keyframes move-bg {
