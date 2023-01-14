@@ -14,7 +14,9 @@ function Login() {
   return (
     <div className="login-body body">
       <div className="login-page-container">
-        <img src="/logo_w_o_text.png" />
+        <Link href="/">
+          <img src="/logo_w_o_text.png" />
+        </Link>
         <h1>Login to Metavolf</h1>
         <form onSubmit={handleSubmit}>
           <label for="email">Email address:</label>

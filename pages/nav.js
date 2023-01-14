@@ -13,7 +13,10 @@ function Navbar() {
 
   return (
     <nav>
-      <img src="/logo.png" />
+      <Link href="/">
+        <img src="/logo.png" />
+      </Link>
+
       <ul>
         <li>
           <Link href="/">Services</Link>
