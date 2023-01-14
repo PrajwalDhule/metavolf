@@ -13,7 +13,11 @@
   color: transparent;
 }
 
-.home-body {
+.hero-body {
+  position: relative;
+}
+
+.hero-body .hero-content {
   min-height: 100vh;
   width: 100vw;
   position: relative;
@@ -34,7 +38,7 @@
   z-index: 1;
 }
 
-.home-body h1 {
+.hero-body .hero-content h1 {
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,11 +53,11 @@
   background-clip: text;
 }
 
-.home-body h1 p + p {
+.hero-body .hero-content h1 p + p {
   margin-left: 0.25em;
 }
 
-.home-body p.desc {
+.hero-body .hero-content p.desc {
   color: white;
   text-align: center;
   font-size: 1.25rem;
@@ -62,7 +66,7 @@
   margin-top: 1em;
 }
 
-.home-body .btn-container button {
+.hero-body .hero-content .btn-container button {
   border: none;
   border-radius: 1px;
   font-family: "Poppins";
@@ -76,13 +80,13 @@
   cursor: pointer;
 }
 
-.home-body .btn-container button:hover {
+.hero-body .hero-content .btn-container button:hover {
   border: 2px solid #533fb7;
   background-color: #533fb7;
   color: #110d26;
 }
 
-.home-body .btn-container button + button {
+.hero-body .hero-content .btn-container a + a button {
   background-color: white;
   border: 2px solid white;
   color: #110d26;
@@ -90,7 +94,7 @@
   font-weight: 500;
 }
 
-.home-body .btn-container button + button:hover {
+.hero-body .hero-content .btn-container a + a button:hover {
   color: white;
 }
 
@@ -110,4 +114,4 @@
     }
   }
 }
-/*# sourceMappingURL=Home.css.map */
+/*# sourceMappingURL=Hero.css.map */

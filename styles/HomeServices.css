@@ -1,0 +1,43 @@
+.home-services-body {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  color: white;
+  padding: 0 5vw;
+}
+
+.home-services-body h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1em 0 0;
+}
+
+.home-services-body .services {
+  width: 55%;
+}
+
+.home-services-body .services .line {
+  height: 1.25px;
+  background-color: yellow;
+  margin: 2em 0;
+}
+
+.home-services-body .services span {
+  font-size: 2.25rem;
+  font-weight: 200;
+}
+
+.home-services-body .services p {
+  font-weight: 100;
+  margin-top: 0.5em;
+}
+
+.home-services-body img {
+  position: absolute;
+  right: 0;
+  top: 55%;
+  -webkit-transform: translate(0, -50%) scale(0.75);
+          transform: translate(0, -50%) scale(0.75);
+}
+/*# sourceMappingURL=HomeServices.css.map */
