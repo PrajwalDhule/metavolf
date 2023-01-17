@@ -1,10 +1,24 @@
 import Link from "next/link";
-import Navbar from "../nav";
 
 export default function HomeServices() {
   return (
     <div className="home-services-body">
+      <div className="desc">
+        <p>
+          Metavolf builds Metaverses specific to our client and has worked on
+          75+ projects. We carry out marketing campaigns in an extremely
+          customer engaging way.
+        </p>
+        <div className="trust-label">
+          <div>
+            <p>100+ </p>
+            <p>clients</p>
+          </div>
+          <img src="/trust_label.png" />
+        </div>
+      </div>
       <div className="home-services-content">
+        <div className="line"></div>
         <h2>Our Services</h2>
         <div className="services">
           <div className="line"></div>
@@ -29,7 +43,6 @@ export default function HomeServices() {
           </p>
           <div className="line"></div>
         </div>
-        <img src="/globe.png"></img>
       </div>
     </div>
   );

@@ -1,43 +1,99 @@
-.home-services-body {
+.home-services-body .desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10vh 5vw;
+  color: white;
+}
+
+.home-services-body .desc > p {
+  width: 55%;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.home-services-body .desc .trust-label {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  position: relative;
+  margin-inline: auto;
+}
+
+.home-services-body .desc .trust-label img {
+  position: relative;
+  height: 40vh;
+  -webkit-animation: rotating 12s linear infinite;
+          animation: rotating 12s linear infinite;
+}
+
+.home-services-body .desc .trust-label > div {
+  position: absolute;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.home-services-body .home-services-content {
   min-height: 100vh;
   width: 100vw;
   position: relative;
   color: white;
-  padding: 0 5vw;
+  padding: 5vh 5vw 0 5vw;
 }
 
-.home-services-body h2 {
+.home-services-body .home-services-content h2 {
   text-transform: uppercase;
   font-size: 3rem;
   font-weight: 300;
   padding: 1em 0 0;
 }
 
-.home-services-body .services {
+.home-services-body .home-services-content .services {
   width: 55%;
 }
 
-.home-services-body .services .line {
+.home-services-body .home-services-content .services .line {
   height: 1.25px;
   background-color: yellow;
   margin: 2em 0;
 }
 
-.home-services-body .services span {
+.home-services-body .home-services-content .services span {
   font-size: 2.25rem;
   font-weight: 200;
 }
 
-.home-services-body .services p {
+.home-services-body .home-services-content .services p {
   font-weight: 100;
   margin-top: 0.5em;
 }
 
-.home-services-body img {
-  position: absolute;
-  right: 0;
-  top: 55%;
-  -webkit-transform: translate(0, -50%) scale(0.75);
-          transform: translate(0, -50%) scale(0.75);
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 /*# sourceMappingURL=HomeServices.css.map */
