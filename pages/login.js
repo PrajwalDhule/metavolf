@@ -1,14 +1,21 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import axios from "axios";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function handleSubmit(event) {
+  var handleSubmit = async (event) => {
     event.preventDefault();
     console.log("email:", email);
     console.log("password:", password);
+    // get encrypted password from the server and pass password as a parameter
+    const encryptedPassword = await axios.post("/api/encrypt", {
+      email: email,
+      password: password,
+    });
+    console.log("Message :", encryptedPassword.data);
   }
 
   return (
