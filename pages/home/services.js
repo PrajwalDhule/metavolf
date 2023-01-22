@@ -18,30 +18,34 @@ export default function HomeServices() {
         </div>
       </div>
       <div className="home-services-content">
-        <div className="line"></div>
-        <h2>Our Services</h2>
+        <div className="start-line"></div>
+        <h2>
+          <div>
+            <div></div>Our
+          </div>
+          <div>Services</div>
+        </h2>
         <div className="services">
-          <div className="line"></div>
-          <span>Service 1</span>
-          <span> Name</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod.
-          </p>
-          <div className="line"></div>
-          <span>Service 2</span>
-          <span> Name</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing, sed do eiusmod.
-          </p>
-          <div className="line"></div>
-          <span>Service 3</span>
-          <span> Name</span>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmodLorem.
-          </p>
-          <div className="line"></div>
+          <div className="service">
+            <div className="service-content-wrapper">
+              <div className="service-content">
+                <h4>Metaverse Development</h4>
+                <p>
+                  Give your customers a highly immersive and unforgettable
+                  Metaverse experience
+                </p>
+                <div className="bottom-wrapper">
+                  <p>01</p>
+                  <button>View more</button>
+                </div>
+              </div>
+              <div className="line"></div>
+            </div>
+            <div className="service-img-wrapper">
+              {/* <img src="/"/> */}
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

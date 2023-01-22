@@ -24,11 +24,11 @@ $yellow: #fff7ae;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: "Poppins";
     z-index: 1;
     h1 {
       color: white;
       display: flex;
+      font-weight: 800;
       // font-size: 5rem;
       // p:nth-child(1) {
       //   background: linear-gradient(
@@ -48,7 +48,7 @@ $yellow: #fff7ae;
       --bg-size: 400%;
       --color-one: hsl(18, 100%, 50%);
       --color-two: hsl(0, 0%, 100%);
-      font-size: clamp(3rem, 25vmin, 5rem);
+      font-size: clamp(3rem, 25vmin, 4.5rem);
       background: linear-gradient(
           90deg,
           var(--color-one),
@@ -62,24 +62,24 @@ $yellow: #fff7ae;
     p.desc {
       color: white;
       text-align: center;
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       font-weight: 200;
-      width: 45vw;
-      margin-top: 0.5em;
+      width: 35vw;
+      margin-top: 1em;
     }
     .btn-container {
       button {
         border: none;
         border-radius: 1px;
-        font-family: "Poppins";
         font-size: 1rem;
         padding: 1.25em 0;
-        margin-top: 4em;
+        margin-top: 3em;
         width: 16em;
         background-color: $dark-blue;
         border: 2px solid $dark-blue;
         color: $yellow;
         cursor: pointer;
+        font-family: "Mona Sans";
         &:hover {
           border: 2px solid #533fb7;
           background-color: #533fb7;

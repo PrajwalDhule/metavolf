@@ -15,7 +15,8 @@
 .home-services-body .desc > p {
   width: 55%;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
 .home-services-body .desc .trust-label {
@@ -48,31 +49,73 @@
   padding: 5vh 5vw 0 5vw;
 }
 
+.home-services-body .home-services-content .start-line {
+  height: 25vh;
+  width: 1px;
+  background-color: #a7ffef;
+  margin-inline: auto;
+}
+
 .home-services-body .home-services-content h2 {
   text-transform: uppercase;
   font-size: 3rem;
   font-weight: 300;
   padding: 1em 0 0;
+  width: 100%;
 }
 
-.home-services-body .home-services-content .services {
-  width: 55%;
-}
-
-.home-services-body .home-services-content .services .line {
-  height: 1.25px;
-  background-color: yellow;
-  margin: 2em 0;
-}
-
-.home-services-body .home-services-content .services span {
-  font-size: 2.25rem;
+.home-services-body .home-services-content h2 > div {
+  width: 50%;
   font-weight: 200;
 }
 
-.home-services-body .home-services-content .services p {
-  font-weight: 100;
-  margin-top: 0.5em;
+.home-services-body .home-services-content h2 > div:nth-child(1) {
+  margin-inline: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 0.6;
+}
+
+.home-services-body .home-services-content h2 > div:nth-child(1) div {
+  border-radius: 50%;
+  width: 0.3em;
+  aspect-ratio: 1;
+  background-color: #a7ffef;
+  margin-right: 0.4em;
+}
+
+.home-services-body .home-services-content h2 > div:nth-child(2) {
+  text-align: left;
+  margin-inline: auto 0;
+}
+
+.home-services-body .home-services-content .services .service .service-content-wrapper {
+  width: 50%;
+}
+
+.home-services-body .home-services-content .services .service .service-content-wrapper .service-content h4 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+.home-services-body .home-services-content .services .service .service-content-wrapper .service-content > p {
+  font-weight: 200;
+}
+
+.home-services-body .home-services-content .services .service .service-content-wrapper .service-content .bottom-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @-webkit-keyframes rotating {

@@ -1,3 +1,21 @@
+$cyan: #a7ffef;
+
+// @font-face {
+//   font-family: "mona-sansbold";
+//   src: url("./MonaSans/mona-sans-bold-webfont.woff2") format("woff2"),
+//     url("./MonaSans/mona-sans-bold-webfont.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+// @font-face {
+//   font-family: "Mona Sans";
+//   src: url("./Mona-Sans.woff2") format("woff2");
+//   src: url("./Mona-Sans.woff") format("woff");
+//   // url("./MonaSans/mona-sans-bold-webfont.woff") format("woff");
+//   font-weight: normal;
+//   font-style: normal;
+// }
+
 .home-services-body {
   .desc {
     display: flex;
@@ -8,7 +26,9 @@
     & > p {
       width: 55%;
       font-size: 1.5rem;
-      font-weight: 300;
+      font-weight: 500;
+      // font-weight: 200;
+      line-height: 1.3;
     }
     .trust-label {
       display: grid;
@@ -35,26 +55,61 @@
     position: relative;
     color: white;
     padding: 5vh 5vw 0 5vw;
+    .start-line {
+      height: 25vh;
+      width: 1px;
+      background-color: $cyan;
+      margin-inline: auto;
+    }
     h2 {
       text-transform: uppercase;
       font-size: 3rem;
       font-weight: 300;
       padding: 1em 0 0;
-    }
-    .services {
-      width: 55%;
-      .line {
-        height: 1.25px;
-        background-color: yellow;
-        margin: 2em 0;
-      }
-      span {
-        font-size: 2.25rem;
+      width: 100%;
+      & > div {
+        width: 50%;
         font-weight: 200;
       }
-      p {
-        font-weight: 100;
-        margin-top: 0.5em;
+      & > div:nth-child(1) {
+        margin-inline: 0 auto;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        line-height: 0.6;
+        div {
+          border-radius: 50%;
+          width: 0.3em;
+          aspect-ratio: 1;
+          background-color: $cyan;
+          margin-right: 0.4em;
+        }
+      }
+      & > div:nth-child(2) {
+        text-align: left;
+        margin-inline: auto 0;
+      }
+    }
+    .services {
+      .service {
+        .service-content-wrapper {
+          width: 50%;
+          .service-content {
+            h4 {
+              font-size: 2rem;
+              font-weight: 300;
+            }
+            & > p {
+              font-weight: 200;
+            }
+            .bottom-wrapper {
+              display: flex;
+              justify-content: space-between;
+            }
+          }
+        }
+        .service-img-wrapper {
+        }
       }
     }
   }
