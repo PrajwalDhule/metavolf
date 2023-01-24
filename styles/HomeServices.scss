@@ -55,60 +55,65 @@ $cyan: #a7ffef;
     position: relative;
     color: white;
     padding: 5vh 5vw 0 5vw;
-    .start-line {
-      height: 25vh;
-      width: 1px;
-      background-color: $cyan;
-      margin-inline: auto;
+    .start-line-wrapper {
+      display: grid;
+      place-items: center;
+      width: fit-content;
+      .start-line {
+        height: 25vh;
+        width: 1px;
+        background-color: $cyan;
+      }
+      .circle {
+        height: 10px;
+        aspect-ratio: 1;
+        background-color: $cyan;
+        border-radius: 50%;
+      }
     }
     h2 {
       text-transform: uppercase;
-      font-size: 3rem;
+      font-size: 2.5rem;
       font-weight: 300;
-      padding: 1em 0 0;
+      margin-top: 0.5em;
       width: 100%;
-      & > div {
-        width: 50%;
-        font-weight: 200;
-      }
-      & > div:nth-child(1) {
-        margin-inline: 0 auto;
-        display: flex;
-        justify-content: right;
-        align-items: center;
-        line-height: 0.6;
-        div {
-          border-radius: 50%;
-          width: 0.3em;
-          aspect-ratio: 1;
-          background-color: $cyan;
-          margin-right: 0.4em;
-        }
-      }
-      & > div:nth-child(2) {
-        text-align: left;
-        margin-inline: auto 0;
-      }
+      // & > div {
+      //   width: 50%;
+      //   font-weight: 200;
+      // }
+      // & > div:nth-child(1) {
+      //   margin-inline: 0 auto;
+      //   display: flex;
+      //   justify-content: right;
+      //   align-items: center;
+      //   line-height: 0.6;
+      //   div {
+      //     border-radius: 50%;
+      //     width: 0.3em;
+      //     aspect-ratio: 1;
+      //     background-color: $cyan;
+      //     margin-right: 0.4em;
+      //   }
+      // }
+      // & > div:nth-child(2) {
+      //   text-align: left;
+      //   margin-inline: auto 0;
+      // }
     }
     .services {
       .service {
-        .service-content-wrapper {
-          width: 50%;
-          .service-content {
-            h4 {
-              font-size: 2rem;
-              font-weight: 300;
-            }
-            & > p {
-              font-weight: 200;
-            }
-            .bottom-wrapper {
-              display: flex;
-              justify-content: space-between;
-            }
-          }
+        width: 50%;
+        padding: 2em;
+        margin-top: 3em;
+        background-color: rgb(9, 9, 114);
+        h4 {
+          font-size: 1.5rem;
+          font-weight: 300;
+          margin-bottom: 1em;
         }
-        .service-img-wrapper {
+        p {
+          font-weight: 200;
+          font-size: 1.2rem;
         }
       }
     }

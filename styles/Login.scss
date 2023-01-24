@@ -9,6 +9,8 @@ $light-green: #3f8708;
 
 .login-body {
   background-color: $blue-bg;
+  letter-spacing: 0.5px;
+  // font-family: "Poppins";
   .login-page-container {
     color: #ffffff;
     display: grid;
@@ -53,7 +55,7 @@ $light-green: #3f8708;
         border: none;
         padding: 8px;
         border-radius: 5px;
-        font-family: "Poppins";
+        font-family: "Mona Sans";
         font-size: 1rem;
         // font-weight: 200;
         margin: 15px 0 5px 0;

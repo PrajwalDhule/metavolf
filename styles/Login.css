@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 .login-body {
   background-color: #13005a;
+  letter-spacing: 0.5px;
 }
 
 .login-body .login-page-container {
@@ -59,7 +60,7 @@
   border: none;
   padding: 8px;
   border-radius: 5px;
-  font-family: "Poppins";
+  font-family: "Mona Sans";
   font-size: 1rem;
   margin: 15px 0 5px 0;
   cursor: pointer;
