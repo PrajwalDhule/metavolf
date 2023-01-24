@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navbar from "../nav";
+import Navbar from "./nav";
 
 export default function Hero() {
   return (
