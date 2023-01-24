@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navbar from "../nav";
+import Navbar from "./nav";
 import Hero from "./hero";
 import HomeServices from "./services";
 import WhyUs from "./whyUs";
