@@ -4,6 +4,7 @@ import "../styles/Navbar.css";
 import "../styles/Hero.css";
 import "../styles/HomeServices.css";
 import "../styles/WhyUs.css";
+import "../styles/testimonial.css";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

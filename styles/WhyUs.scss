@@ -1,34 +1,80 @@
+$cyan: #a7ffef;
+
 .why-us-body {
   min-height: 100vh;
   width: 100vw;
   position: relative;
   color: white;
   padding: 0 5vw;
-  h2 {
-    font-size: 3rem;
-    font-weight: 300;
-    padding: 1em 0 0;
-  }
-  .services {
-    width: 55%;
-    .line {
-      height: 1.25px;
-      background-color: yellow;
-      margin: 2em 0;
-    }
-    span {
-      font-size: 2.25rem;
+  margin-top: 25vh;
+  .heading {
+    width: 100vw;
+    display: grid;
+    position: relative;
+    h2 {
+      font-size: 3rem;
       font-weight: 200;
+      justify-self: center;
+      position: absolute;
+      left: 45vw;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      letter-spacing: 1px;
     }
-    p {
-      font-weight: 100;
-      margin-top: 0.5em;
+    .start-line-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: fit-content;
+      .start-line:nth-child(1) {
+        height: 25vh;
+        width: 1px;
+        background-color: $cyan;
+      }
+      .start-line:nth-child(2) {
+        height: 1.5px;
+        width: 24vw;
+        background-color: $cyan;
+        position: relative;
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -16px;
+          width: 16px;
+          aspect-ratio: 1;
+          background-color: $cyan;
+          border-radius: 50%;
+        }
+      }
     }
   }
-  img {
-    position: absolute;
-    right: 0;
-    top: 55%;
-    transform: translate(0, -50%) scale(0.75);
+  .why-us-content {
+    margin-top: 25vh;
+    p {
+      width: 60%;
+      margin-inline: auto;
+      text-align: center;
+      font-size: 1.75rem;
+      // font-weight: 200;
+    }
+  }
+  & > .start-line-wrapper {
+    display: grid;
+    place-items: center;
+    width: fit-content;
+    margin-inline: auto;
+    .start-line {
+      height: 25vh;
+      width: 1px;
+      background-color: $cyan;
+    }
+    .circle {
+      height: 16px;
+      aspect-ratio: 1;
+      background-color: $cyan;
+      border-radius: 50%;
+    }
   }
 }

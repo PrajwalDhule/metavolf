@@ -21,7 +21,7 @@ $cyan: #a7ffef;
     display: flex;
     justify-content: left;
     align-items: center;
-    padding: 10vh 5vw;
+    padding: 5vh 5vw;
     color: white;
     & > p {
       width: 55%;
@@ -65,7 +65,7 @@ $cyan: #a7ffef;
         background-color: $cyan;
       }
       .circle {
-        height: 10px;
+        height: 16px;
         aspect-ratio: 1;
         background-color: $cyan;
         border-radius: 50%;
@@ -73,8 +73,8 @@ $cyan: #a7ffef;
     }
     h2 {
       text-transform: uppercase;
-      font-size: 2.5rem;
-      font-weight: 300;
+      font-size: 3rem;
+      font-weight: 200;
       margin-top: 0.5em;
       width: 100%;
       // & > div {
@@ -102,18 +102,19 @@ $cyan: #a7ffef;
     }
     .services {
       .service {
-        width: 50%;
-        padding: 2em;
+        width: 60%;
+        padding: 2.5em;
         margin-top: 3em;
         background-color: rgb(9, 9, 114);
         h4 {
-          font-size: 1.5rem;
+          font-size: 2.5rem;
           font-weight: 300;
-          margin-bottom: 1em;
+          margin-bottom: 0.5em;
         }
         p {
           font-weight: 200;
-          font-size: 1.2rem;
+          font-size: 1.25rem;
+          // font-family: "Poppins";
         }
       }
     }
