@@ -1,3 +1,7 @@
+.home-services-body {
+  margin-bottom: 20vh;
+}
+
 .home-services-body .desc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -60,41 +64,70 @@
 
 .home-services-body .home-services-content .start-line-wrapper .start-line {
   height: 25vh;
-  width: 1px;
+  width: 0.5px;
   background-color: #a7ffef;
 }
 
 .home-services-body .home-services-content .start-line-wrapper .circle {
-  height: 16px;
+  height: 12px;
   aspect-ratio: 1;
   background-color: #a7ffef;
   border-radius: 50%;
 }
 
 .home-services-body .home-services-content h2 {
-  text-transform: uppercase;
-  font-size: 3rem;
-  font-weight: 200;
+  font-size: 2.25rem;
+  font-weight: 600;
   margin-top: 0.5em;
   width: 100%;
 }
 
 .home-services-body .home-services-content .services .service {
-  width: 60%;
-  padding: 2.5em;
+  width: 100%;
   margin-top: 3em;
-  background-color: #090972;
+  background-color: #080e41;
+  border: 2px solid #0b1457;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.home-services-body .home-services-content .services .service h4 {
-  font-size: 2.5rem;
+.home-services-body .home-services-content .services .service .service-content {
+  padding: 2.5em;
+  width: 60%;
+}
+
+.home-services-body .home-services-content .services .service .service-content h4 {
+  font-size: 2rem;
   font-weight: 300;
-  margin-bottom: 0.5em;
+  margin-bottom: 0.75em;
 }
 
-.home-services-body .home-services-content .services .service p {
-  font-weight: 200;
-  font-size: 1.25rem;
+.home-services-body .home-services-content .services .service .service-content > p {
+  grid-area: two;
+  font-weight: 100;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  line-height: 1.25;
+  opacity: 0.9;
+}
+
+.home-services-body .home-services-content .services .service a {
+  width: 40%;
+  grid-area: three;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-left: 2px solid #0b1457;
+  -webkit-transition: background-color 150ms ease-out;
+  transition: background-color 150ms ease-out;
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+
+.home-services-body .home-services-content .services .service a:hover {
+  background-color: #0b1457;
 }
 
 @-webkit-keyframes rotating {

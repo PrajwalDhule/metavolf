@@ -25,25 +25,30 @@ export default function HomeServices() {
         <h2>Our Services</h2>
         <div className="services">
           <div className="service">
-            <h4>Metaverse Development</h4>
-            <p>
-              Give your customers a highly immersive and unforgettable Metaverse
-              experience
-            </p>
+            <div className="service-content">
+              <h4>Web based metaverses</h4>
+              <p>
+                Unlock the power of data-driven metaverse experiences with our
+                web-based solutions. Optimize sales and engagement with our
+                tracking capabilities.
+              </p>
+            </div>
+            <a href="#">
+              <p>View more</p>
+            </a>
           </div>
           <div className="service">
-            <h4>AR/VR </h4>
-            <p>
-              Create a campaign by starting a NFT collection and provide a
-              unique customer experience
-            </p>
-          </div>
-          <div className="service">
-            <h4>Blockchain Development</h4>
-            <p>
-              From decentralized storages to creating your own blockchain, we've
-              got it all covered.
-            </p>
+            <div className="service-content">
+              <h4>Interactive 360 walkthroughs </h4>
+              <p>
+                Enhance customer awareness and brand awareness with our web
+                based 360 walkthrough solutions. Explore your space like never
+                before with our cutting-edge technology.
+              </p>
+            </div>
+            <a href="#">
+              <p>View more</p>
+            </a>
           </div>
         </div>
       </div>

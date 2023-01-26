@@ -1,4 +1,7 @@
 $cyan: #a7ffef;
+$bg-dark-blue: #000632;
+$dark-blue: #080e41;
+$dark-blue-2: #0b1457;
 
 .why-us-body {
   min-height: 100vh;
@@ -7,13 +10,14 @@ $cyan: #a7ffef;
   color: white;
   padding: 0 5vw;
   margin-top: 25vh;
+
   .heading {
     width: 100vw;
     display: grid;
     position: relative;
     h2 {
-      font-size: 3rem;
-      font-weight: 200;
+      font-size: 2.25rem;
+      font-weight: 600;
       justify-self: center;
       position: absolute;
       left: 45vw;
@@ -28,12 +32,12 @@ $cyan: #a7ffef;
       width: fit-content;
       .start-line:nth-child(1) {
         height: 25vh;
-        width: 1px;
+        width: 0.5px;
         background-color: $cyan;
       }
       .start-line:nth-child(2) {
-        height: 1.5px;
-        width: 24vw;
+        height: 1px;
+        width: 27.5vw;
         background-color: $cyan;
         position: relative;
         &::after {
@@ -41,8 +45,8 @@ $cyan: #a7ffef;
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
-          right: -16px;
-          width: 16px;
+          right: -12px;
+          width: 12px;
           aspect-ratio: 1;
           background-color: $cyan;
           border-radius: 50%;
@@ -51,9 +55,9 @@ $cyan: #a7ffef;
     }
   }
   .why-us-content {
-    margin-top: 25vh;
+    margin: 25vh 0;
     p {
-      width: 60%;
+      width: 67%;
       margin-inline: auto;
       text-align: center;
       font-size: 1.75rem;
@@ -76,5 +80,43 @@ $cyan: #a7ffef;
       background-color: $cyan;
       border-radius: 50%;
     }
+  }
+  .contact-text {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 2em 0 1em 0;
+    span:nth-child(2) {
+      color: rgb(73, 73, 255);
+      margin-left: 0.25em;
+    }
+  }
+  button {
+    // margin-inline: auto;
+    // margin-left: 500px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: transparent;
+    color: white;
+    font-weight: 300;
+    border: 1px solid $cyan;
+    padding: 4em 14em;
+    margin-bottom: 12.5vh;
+    a {
+      font-size: 2rem;
+      font-family: "Mona Sans";
+      font-stretch: 125%;
+      svg {
+        height: 1em;
+        margin-left: 1em;
+      }
+    }
+    &:hover {
+      background-color: $cyan;
+      color: $bg-dark-blue;
+      font-weight: 300;
+    }
+    transition: all 250ms;
   }
 }

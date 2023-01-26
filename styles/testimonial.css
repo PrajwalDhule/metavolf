@@ -2,7 +2,7 @@
   margin: 10vh 0;
   padding: 2em;
   width: 30vw;
-  background-color: #00007a;
+  background-color: #00005c;
   margin-inline: auto;
 }
 
@@ -18,7 +18,7 @@
 .testimonial-body span {
   font-size: 0.9rem;
   padding: 1em;
-  background-color: #000092;
+  background-color: #010181;
   border-radius: 5px;
 }
 
@@ -31,4 +31,4 @@
   font-weight: 300;
   line-height: 1.3;
 }
-/*# sourceMappingURL=testimonial.css.map */
+/*# sourceMappingURL=Testimonial.css.map */

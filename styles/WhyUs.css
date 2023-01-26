@@ -15,8 +15,8 @@
 }
 
 .why-us-body .heading h2 {
-  font-size: 3rem;
-  font-weight: 200;
+  font-size: 2.25rem;
+  font-weight: 600;
   -ms-grid-column-align: center;
       justify-self: center;
   position: absolute;
@@ -45,13 +45,13 @@
 
 .why-us-body .heading .start-line-wrapper .start-line:nth-child(1) {
   height: 25vh;
-  width: 1px;
+  width: 0.5px;
   background-color: #a7ffef;
 }
 
 .why-us-body .heading .start-line-wrapper .start-line:nth-child(2) {
-  height: 1.5px;
-  width: 24vw;
+  height: 1px;
+  width: 27.5vw;
   background-color: #a7ffef;
   position: relative;
 }
@@ -62,19 +62,19 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  right: -16px;
-  width: 16px;
+  right: -12px;
+  width: 12px;
   aspect-ratio: 1;
   background-color: #a7ffef;
   border-radius: 50%;
 }
 
 .why-us-body .why-us-content {
-  margin-top: 25vh;
+  margin: 25vh 0;
 }
 
 .why-us-body .why-us-content p {
-  width: 60%;
+  width: 67%;
   margin-inline: auto;
   text-align: center;
   font-size: 1.75rem;
@@ -101,5 +101,53 @@
   aspect-ratio: 1;
   background-color: #a7ffef;
   border-radius: 50%;
+}
+
+.why-us-body .contact-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  margin: 2em 0 1em 0;
+}
+
+.why-us-body .contact-text span:nth-child(2) {
+  color: #4949ff;
+  margin-left: 0.25em;
+}
+
+.why-us-body button {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background-color: transparent;
+  color: white;
+  font-weight: 300;
+  border: 1px solid #a7ffef;
+  padding: 4em 14em;
+  margin-bottom: 12.5vh;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+}
+
+.why-us-body button a {
+  font-size: 2rem;
+  font-family: "Mona Sans";
+  font-stretch: 125%;
+}
+
+.why-us-body button a svg {
+  height: 1em;
+  margin-left: 1em;
+}
+
+.why-us-body button:hover {
+  background-color: #a7ffef;
+  color: #000632;
+  font-weight: 300;
 }
 /*# sourceMappingURL=WhyUs.css.map */

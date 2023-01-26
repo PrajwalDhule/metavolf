@@ -1,4 +1,7 @@
 $cyan: #a7ffef;
+$bg-dark-blue: #000632;
+$dark-blue: #080e41;
+$dark-blue-2: #0b1457;
 
 // @font-face {
 //   font-family: "mona-sansbold";
@@ -17,6 +20,7 @@ $cyan: #a7ffef;
 // }
 
 .home-services-body {
+  margin-bottom: 20vh;
   .desc {
     display: flex;
     justify-content: left;
@@ -27,7 +31,6 @@ $cyan: #a7ffef;
       width: 55%;
       font-size: 1.5rem;
       font-weight: 500;
-      // font-weight: 200;
       line-height: 1.3;
     }
     .trust-label {
@@ -37,7 +40,6 @@ $cyan: #a7ffef;
       margin-inline: auto;
       img {
         position: relative;
-        // position: absolute;
         height: 40vh;
         animation: rotating 12s linear infinite;
       }
@@ -61,20 +63,20 @@ $cyan: #a7ffef;
       width: fit-content;
       .start-line {
         height: 25vh;
-        width: 1px;
+        width: 0.5px;
         background-color: $cyan;
       }
       .circle {
-        height: 16px;
+        height: 12px;
         aspect-ratio: 1;
         background-color: $cyan;
         border-radius: 50%;
       }
     }
     h2 {
-      text-transform: uppercase;
-      font-size: 3rem;
-      font-weight: 200;
+      // text-transform: uppercase;
+      font-size: 2.25rem;
+      font-weight: 600;
       margin-top: 0.5em;
       width: 100%;
       // & > div {
@@ -102,19 +104,45 @@ $cyan: #a7ffef;
     }
     .services {
       .service {
-        width: 60%;
-        padding: 2.5em;
+        width: 100%;
         margin-top: 3em;
-        background-color: rgb(9, 9, 114);
-        h4 {
-          font-size: 2.5rem;
-          font-weight: 300;
-          margin-bottom: 0.5em;
+        background-color: $dark-blue;
+        border: 2px solid $dark-blue-2;
+        display: flex;
+        // grid-template-areas: "one three" "two three";
+        // font-family: "Poppins";
+
+        .service-content {
+          padding: 2.5em;
+          width: 60%;
+
+          h4 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 0.75em;
+          }
+          & > p {
+            grid-area: two;
+            font-weight: 100;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            line-height: 1.25;
+            opacity: 0.9;
+          }
         }
-        p {
-          font-weight: 200;
-          font-size: 1.25rem;
-          // font-family: "Poppins";
+        a {
+          width: 40%;
+          grid-area: three;
+          display: grid;
+          place-items: center;
+          text-align: center;
+          border-left: 2px solid $dark-blue-2;
+          transition: background-color 150ms ease-out;
+          font-size: 1.5rem;
+          font-weight: 100;
+          &:hover {
+            background-color: $dark-blue-2;
+          }
         }
       }
     }

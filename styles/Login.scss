@@ -11,6 +11,7 @@ $light-green: #3f8708;
   background-color: $blue-bg;
   letter-spacing: 0.5px;
   // font-family: "Poppins";
+  // font-family: "Space Grotesk";
   .login-page-container {
     color: #ffffff;
     display: grid;
@@ -29,7 +30,7 @@ $light-green: #3f8708;
       justify-content: center;
       // align-items: flex-start;
       flex-direction: column;
-      width: 30vw;
+      width: 27.5vw;
       padding: 1.75em;
       border-radius: 5px;
       label {
@@ -39,11 +40,12 @@ $light-green: #3f8708;
         background-color: $blue-bg;
         color: white;
         font-size: 1.1rem;
-        font-weight: 200;
-        border: none;
+        font-weight: 300;
         padding: 10px;
         margin: 15px 0;
         border-radius: 5px;
+        border: none;
+        font-family: "Mona Sans";
         // &:focus {
         //   border: none;
         // }
@@ -52,13 +54,14 @@ $light-green: #3f8708;
         background-color: $green;
         color: white;
         width: 100%;
-        border: none;
-        padding: 8px;
-        border-radius: 5px;
         font-family: "Mona Sans";
         font-size: 1rem;
-        // font-weight: 200;
         margin: 15px 0 5px 0;
+        font-size: 1.1rem;
+        font-weight: 300;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
         &:hover {
           background-color: $light-green;
