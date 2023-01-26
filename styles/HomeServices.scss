@@ -58,6 +58,7 @@ $dark-blue-2: #0b1457;
     color: white;
     padding: 5vh 5vw 0 5vw;
     .start-line-wrapper {
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
       display: grid;
       place-items: center;
       width: fit-content;
@@ -75,6 +76,7 @@ $dark-blue-2: #0b1457;
     }
     h2 {
       // text-transform: uppercase;
+      opacity: 0;
       font-size: 2.25rem;
       font-weight: 600;
       margin-top: 0.5em;

@@ -1,6 +1,24 @@
 import Link from "next/link";
+import React, { useRef, useEffect, useState } from "react";
+import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
+// gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeServices() {
+  useEffect(() => {
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".home-services-content",
+      },
+    });
+    tl.to(".home-services-content > .start-line-wrapper", {
+      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+      duration: 0.25,
+    }).to(".home-services-content > h2", {
+      opacity: 1,
+      duration: 0.25,
+    });
+  }, []);
   return (
     <div className="home-services-body">
       <div className="desc">

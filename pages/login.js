@@ -22,9 +22,9 @@ function Login() {
     <div className="login-body body">
       <div className="login-page-container">
         <Link href="/">
-          <img src="/logo_w_o_text.png" />
+          <img src="/logo.png" />
         </Link>
-        <h1>Login to HyperSales</h1>
+        <h1>Login to your account</h1>
         <form onSubmit={handleSubmit}>
           <label for="email">Email address:</label>
           <input

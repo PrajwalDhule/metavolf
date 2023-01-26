@@ -54,6 +54,8 @@
 }
 
 .home-services-body .home-services-content .start-line-wrapper {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -76,6 +78,7 @@
 }
 
 .home-services-body .home-services-content h2 {
+  opacity: 0;
   font-size: 2.25rem;
   font-weight: 600;
   margin-top: 0.5em;

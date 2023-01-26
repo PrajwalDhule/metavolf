@@ -62,11 +62,13 @@
   color: #a7ffef;
   cursor: pointer;
   font-family: "Mona Sans";
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
 }
 
 .hero-body .hero-content .btn-container button:hover {
-  border: 2px solid #352392;
-  background-color: #352392;
+  border: 2px solid #000b16;
+  background-color: #000b16;
 }
 
 .hero-body .hero-content .btn-container a + a button {
@@ -78,7 +80,8 @@
 }
 
 .hero-body .hero-content .btn-container a + a button:hover {
-  color: white;
+  border: 2px solid #bebebe;
+  background-color: #bebebe;
 }
 
 @media (prefers-reduced-motion: no-preference) {

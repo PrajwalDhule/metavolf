@@ -13,12 +13,14 @@
 }
 
 .login-body .login-page-container img {
-  height: 12vh;
-  margin-bottom: -2rem;
+  height: 6vh;
+  margin: 1em 0 -2rem 0;
 }
 
 .login-body .login-page-container h1 {
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1em 0 -1em 0;
 }
 
 .login-body .login-page-container form {
