@@ -44,7 +44,7 @@ export default function HomeServices() {
     <div className="home-services-body">
       <div className="desc">
         <p>
-          Metavolf builds Metaverses specific to our client and has worked on
+          Hyper Sales builds Metaverses specific to our client and has worked on
           75+ projects. We carry out marketing campaigns in an extremely
           customer engaging way.
         </p>

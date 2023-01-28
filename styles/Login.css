@@ -35,7 +35,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 27.5vw;
+  width: clamp(340px, 27.5vw, 450px);
   padding: 1.75em;
   border-radius: 5px;
 }

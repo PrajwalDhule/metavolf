@@ -41,7 +41,7 @@ export default function WhyUs() {
       })
       .add(function () {
         let line = document.getElementById("lineTwo");
-        line.style.setProperty("--psuedoOpacity", 1);
+        line?.style.setProperty("--psuedoOpacity", 1);
       })
       .to(".why-us-body h2", {
         opacity: 1,

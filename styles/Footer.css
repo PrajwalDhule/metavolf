@@ -1,0 +1,51 @@
+.footer-body {
+  display: -ms-grid;
+  display: grid;
+  gap: 2em;
+      grid-template-areas: "one two three" "four four four";
+  color: white;
+  background-color: black;
+  padding: 3em 5vw;
+  margin-top: 2em;
+  font-size: 1rem;
+}
+
+.footer-body img {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: one;
+  width: clamp(200px, 17.5vw, 400px);
+}
+
+.footer-body h6 {
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.footer-body li {
+  list-style: none;
+  font-weight: 300;
+  margin-bottom: 0.5em;
+}
+
+.footer-body > div:nth-child(2) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: two;
+}
+
+.footer-body > div:nth-child(3) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: three;
+}
+
+.footer-body > div:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: four;
+}
+/*# sourceMappingURL=Footer.css.map */

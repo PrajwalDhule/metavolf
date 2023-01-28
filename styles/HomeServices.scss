@@ -135,7 +135,6 @@ $dark-blue-2: #0b1457;
             }
           }
           & > p {
-            grid-area: two;
             font-weight: 100;
             font-size: 1.1rem;
             letter-spacing: 0.5px;
@@ -145,7 +144,6 @@ $dark-blue-2: #0b1457;
         }
         a {
           width: 40%;
-          grid-area: three;
           display: grid;
           place-items: center;
           text-align: center;

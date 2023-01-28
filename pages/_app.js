@@ -6,6 +6,7 @@ import "../styles/HomeServices.css";
 import "../styles/WhyUs.css";
 import "../styles/testimonial.css";
 import "../styles/mediaQueries.css";
+import "../styles/Footer.css";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

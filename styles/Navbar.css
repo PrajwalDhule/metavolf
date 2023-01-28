@@ -43,13 +43,13 @@ nav .desktop-menu li + li {
 
 nav .hamburger-menu {
   display: none;
-  position: relative;
+  position: fixed;
   right: 5vw;
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
 }
 
 nav .hamburger-menu button {
+  position: relative;
+  z-index: 6;
   border: none;
   background-color: transparent;
 }
@@ -113,15 +113,18 @@ nav .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(3) {
 }
 
 nav .menu {
-  position: absolute;
-  top: 60px;
-  width: 36vw;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
   right: 0;
-  background-color: #fff;
-  padding: 1em;
+  background-color: rgba(0, 31, 63, 0.75);
+  -webkit-backdrop-filter: saturate(180%) blur(40px);
+          backdrop-filter: saturate(180%) blur(40px);
+  padding-top: 5em;
+  margin-inline: auto;
   -webkit-box-shadow: 0px 0px 10px #aaa;
           box-shadow: 0px 0px 10px #aaa;
-  display: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,6 +132,9 @@ nav .menu {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
           clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   -webkit-transition: -webkit-clip-path 250ms ease-in-out;
@@ -144,6 +150,12 @@ nav .menu.open {
 
 nav .menu li {
   list-style: none;
+  color: white;
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2rem;
 }
 
 nav .menu li + li {

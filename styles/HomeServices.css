@@ -122,7 +122,6 @@
 }
 
 .home-services-body .home-services-content .services .service .service-content > p {
-  grid-area: two;
   font-weight: 100;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
@@ -132,7 +131,6 @@
 
 .home-services-body .home-services-content .services .service a {
   width: 40%;
-  grid-area: three;
   display: -ms-grid;
   display: grid;
   place-items: center;
