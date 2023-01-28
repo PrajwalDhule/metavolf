@@ -1,5 +1,4 @@
 .why-us-body {
-  min-height: 100vh;
   width: 100vw;
   position: relative;
   color: white;
@@ -25,6 +24,7 @@
   -webkit-transform: translate(-50%, 50%);
           transform: translate(-50%, 50%);
   letter-spacing: 1px;
+  opacity: 0;
 }
 
 .why-us-body .heading .start-line-wrapper {
@@ -44,12 +44,16 @@
 }
 
 .why-us-body .heading .start-line-wrapper .start-line:nth-child(1) {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   height: 25vh;
   width: 0.5px;
   background-color: #a7ffef;
 }
 
 .why-us-body .heading .start-line-wrapper .start-line:nth-child(2) {
+  -webkit-clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+          clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
   height: 1px;
   width: 27.5vw;
   background-color: #a7ffef;
@@ -57,11 +61,12 @@
 }
 
 .why-us-body .heading .start-line-wrapper .start-line:nth-child(2)::after {
+  opacity: var(--psuedoOpacity, 0);
   content: "";
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   right: -12px;
   width: 12px;
   aspect-ratio: 1;
@@ -78,9 +83,12 @@
   margin-inline: auto;
   text-align: center;
   font-size: 1.75rem;
+  opacity: 0;
 }
 
 .why-us-body > .start-line-wrapper {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -112,6 +120,7 @@
           justify-content: center;
   font-size: 2rem;
   margin: 2em 0 1em 0;
+  opacity: 0;
 }
 
 .why-us-body .contact-text span:nth-child(2) {
@@ -120,6 +129,7 @@
 }
 
 .why-us-body button {
+  opacity: 0;
   position: relative;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
@@ -138,6 +148,9 @@
   font-size: 2rem;
   font-family: "Mona Sans";
   font-stretch: 125%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .why-us-body button a svg {

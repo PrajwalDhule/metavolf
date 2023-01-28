@@ -4,7 +4,7 @@ $dark-blue: #080e41;
 $dark-blue-2: #0b1457;
 
 .why-us-body {
-  min-height: 100vh;
+  // min-height: 100vh;
   width: 100vw;
   position: relative;
   color: white;
@@ -24,6 +24,7 @@ $dark-blue-2: #0b1457;
       bottom: 0;
       transform: translate(-50%, 50%);
       letter-spacing: 1px;
+      opacity: 0;
     }
     .start-line-wrapper {
       display: flex;
@@ -31,20 +32,24 @@ $dark-blue-2: #0b1457;
       align-items: flex-start;
       width: fit-content;
       .start-line:nth-child(1) {
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         height: 25vh;
         width: 0.5px;
         background-color: $cyan;
       }
       .start-line:nth-child(2) {
+        clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
         height: 1px;
         width: 27.5vw;
+        // width: 0;
         background-color: $cyan;
         position: relative;
         &::after {
+          opacity: var(--psuedoOpacity, 0);
           content: "";
           position: absolute;
           top: 50%;
-          transform: translateY(-50%);
+          transform: translate(-50%, -50%);
           right: -12px;
           width: 12px;
           aspect-ratio: 1;
@@ -61,10 +66,12 @@ $dark-blue-2: #0b1457;
       margin-inline: auto;
       text-align: center;
       font-size: 1.75rem;
+      opacity: 0;
       // font-weight: 200;
     }
   }
   & > .start-line-wrapper {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     display: grid;
     place-items: center;
     width: fit-content;
@@ -90,10 +97,10 @@ $dark-blue-2: #0b1457;
       color: rgb(73, 73, 255);
       margin-left: 0.25em;
     }
+    opacity: 0;
   }
   button {
-    // margin-inline: auto;
-    // margin-left: 500px;
+    opacity: 0;
     position: relative;
     left: 50%;
     transform: translate(-50%, 0);
@@ -103,10 +110,15 @@ $dark-blue-2: #0b1457;
     border: 1px solid $cyan;
     padding: 4em 14em;
     margin-bottom: 12.5vh;
+    // display: grid;
+    // place-items: center;
+    // width: 100%;
     a {
       font-size: 2rem;
       font-family: "Mona Sans";
       font-stretch: 125%;
+      display: flex;
+      // width: 150%;
       svg {
         height: 1em;
         margin-left: 1em;

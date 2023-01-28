@@ -27,6 +27,7 @@ $dark-blue-2: #0b1457;
     align-items: center;
     padding: 5vh 5vw;
     color: white;
+    opacity: 0;
     & > p {
       width: 55%;
       font-size: 1.5rem;
@@ -111,17 +112,27 @@ $dark-blue-2: #0b1457;
         background-color: $dark-blue;
         border: 2px solid $dark-blue-2;
         display: flex;
+        position: relative;
+        left: 0;
+        transform: translateX(-10%);
         // grid-template-areas: "one three" "two three";
         // font-family: "Poppins";
+        opacity: 0;
 
         .service-content {
-          padding: 2.5em;
+          padding: 3em;
           width: 60%;
 
           h4 {
             font-size: 2rem;
             font-weight: 300;
             margin-bottom: 0.75em;
+            display: flex;
+            p {
+              margin-right: 0.5em;
+              font-weight: 600;
+              opacity: 0.25;
+            }
           }
           & > p {
             grid-area: two;

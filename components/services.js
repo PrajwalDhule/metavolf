@@ -1,23 +1,44 @@
 import Link from "next/link";
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// gsap.registerPlugin(ScrollTrigger);
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 export default function HomeServices() {
   useEffect(() => {
-    let tl = gsap.timeline({
+    let tl1 = gsap.timeline({
       scrollTrigger: {
-        trigger: ".home-services-content",
+        trigger: ".home-services-body",
+        start: "top 75%",
       },
     });
-    tl.to(".home-services-content > .start-line-wrapper", {
-      clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-      duration: 0.25,
-    }).to(".home-services-content > h2", {
+    tl1.to(".home-services-body .desc", {
       opacity: 1,
-      duration: 0.25,
+      duration: 1,
+      ease: "power4.out",
     });
+
+    let tl2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".home-services-content",
+        start: "top center",
+      },
+    });
+    tl2
+      .to(".home-services-content > .start-line-wrapper", {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        duration: 0.5,
+      })
+      .to(".home-services-content > h2", {
+        opacity: 1,
+        opacity: 1,
+        duration: 0.5,
+      })
+      .to(".home-services-content .service", {
+        x: 0,
+        opacity: 1,
+        duration: 0.5,
+      });
   }, []);
   return (
     <div className="home-services-body">
@@ -44,7 +65,9 @@ export default function HomeServices() {
         <div className="services">
           <div className="service">
             <div className="service-content">
-              <h4>Web based metaverses</h4>
+              <h4>
+                <p>01</p>Web based metaverses
+              </h4>
               <p>
                 Unlock the power of data-driven metaverse experiences with our
                 web-based solutions. Optimize sales and engagement with our
@@ -57,7 +80,9 @@ export default function HomeServices() {
           </div>
           <div className="service">
             <div className="service-content">
-              <h4>Interactive 360 walkthroughs </h4>
+              <h4>
+                <p>02</p>Interactive 360 walkthroughs{" "}
+              </h4>
               <p>
                 Enhance customer awareness and brand awareness with our web
                 based 360 walkthrough solutions. Explore your space like never

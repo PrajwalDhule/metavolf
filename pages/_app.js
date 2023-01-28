@@ -5,6 +5,7 @@ import "../styles/Hero.css";
 import "../styles/HomeServices.css";
 import "../styles/WhyUs.css";
 import "../styles/testimonial.css";
+import "../styles/mediaQueries.css";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;
