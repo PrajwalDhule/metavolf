@@ -49,7 +49,7 @@ function Login() {
         <div className="bottom-links">
           <Link href="/">Terms</Link>
           <Link href="/">Privacy</Link>
-          <Link href="/">Contact Metavolf</Link>
+          <Link href="/">Contact HyperSales</Link>
         </div>
       </div>
     </div>
