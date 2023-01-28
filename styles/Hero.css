@@ -27,9 +27,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-weight: 800;
+  font-weight: 700;
   --bg-size: 400%;
-  --color-one: hsl(18, 100%, 50%);
+  --color-one: hsl(237, 59%, 57%);
   --color-two: hsl(0, 0%, 100%);
   font-size: clamp(2rem, 25vmin, 4.5rem);
   background: -webkit-gradient(linear, left top, right top, from(var(--color-one)), color-stop(var(--color-two)), to(var(--color-one))) 0 0/var(--bg-size) 100%;

@@ -10,7 +10,7 @@ font-family: "Space Grotesk"; */
   /* font-stretch: 75% 125%; */
 }
 
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -50,7 +50,7 @@ font-family: "Space Grotesk"; */
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
-}
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -98,7 +98,8 @@ body {
   overflow-x: hidden;
   position: relative;
   z-index: -10;
-  font-family: "Mona Sans", "Poppins";
+  /* font-family: "Mona Sans", "Poppins"; */
+  font-family: "Poppins";
   font-stretch: 125%;
 }
 
