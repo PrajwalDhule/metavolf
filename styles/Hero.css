@@ -61,7 +61,6 @@
   border: 2px solid black;
   color: #a7ffef;
   cursor: pointer;
-  font-family: "Mona Sans";
   -webkit-transition: all 150ms;
   transition: all 150ms;
 }
@@ -118,7 +117,6 @@
   left: 0;
   -webkit-transform: translate(0, -55%);
           transform: translate(0, -55%);
-  font-family: "Poppins";
   font-size: 3.5rem;
   font-weight: 700;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);

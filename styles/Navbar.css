@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 nav {
   position: absolute;
   top: 0;
@@ -15,7 +14,6 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   background-color: transparent;
-  font-family: "Poppins";
   z-index: 5;
 }
 
