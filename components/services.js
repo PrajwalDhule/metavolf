@@ -38,6 +38,7 @@ export default function HomeServices() {
         x: 0,
         opacity: 1,
         duration: 0.5,
+        stagger: 0.25,
       });
   }, []);
   return (
