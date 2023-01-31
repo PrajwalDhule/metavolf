@@ -86,7 +86,7 @@ font-family: "Space Grotesk"; */
     --card-rgb: 100, 100, 100;
     --card-border-rgb: 200, 200, 200;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -113,7 +113,7 @@ body {
   padding: 0;
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -121,7 +121,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-}
+} */
 
 a {
   color: inherit;
@@ -169,4 +169,4 @@ a {
   html {
     color-scheme: dark;
   }
-} */
+}
