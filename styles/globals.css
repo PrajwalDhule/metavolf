@@ -55,7 +55,7 @@ font-family: "Space Grotesk"; */
   --card-border-rgb: 131, 134, 135;
 } */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -101,15 +101,8 @@ body {
   overflow-x: hidden;
   position: relative;
   z-index: -10;
-  /* font-family: "Mona Sans", "Poppins"; */
-  /* font-family: "Poppins"; */
   font-stretch: 125%;
 }
-
-/* #__next {
-  position: relative;
-  z-index: -10;
-} */
 
 .outer-body {
   position: relative;
@@ -140,7 +133,6 @@ a {
 }
 
 ::-webkit-scrollbar {
-  /* width: 15px; */
   width: 8px;
   height: 0;
   background: #000632;
@@ -148,7 +140,6 @@ a {
 
 ::-webkit-scrollbar-track {
   border-radius: 100vw;
-  /* margin-top: 18px; */
   background: #000632;
 }
 
@@ -178,4 +169,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
