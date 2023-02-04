@@ -89,8 +89,8 @@
 .home-services-body .home-services-content .services .service {
   width: 100%;
   margin-top: 3em;
-  background-color: #080e41;
-  border: 2px solid #0b1457;
+  background-color: #00073e;
+  border: 1.5px solid #111c68;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +135,7 @@
   display: grid;
   place-items: center;
   text-align: center;
-  border-left: 2px solid #0b1457;
+  border-left: 1.5px solid #111c68;
   -webkit-transition: background-color 150ms ease-out;
   transition: background-color 150ms ease-out;
   font-size: 1.5rem;
@@ -143,7 +143,7 @@
 }
 
 .home-services-body .home-services-content .services .service a:hover {
-  background-color: #0b1457;
+  background-color: #111c68;
 }
 
 @-webkit-keyframes rotating {

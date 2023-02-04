@@ -3,15 +3,15 @@
 /* font-family: "Montserrat Alternates";
 font-family: "Space Grotesk"; */
 
-/* @font-face {
+@font-face {
   font-family: "Mona Sans";
   src: url("./Mona-Sans.woff2") format("woff2");
   src: url("./Mona-Sans.woff") format("woff");
   font-weight: 200 900;
-} */
+}
 /* font-stretch: 75% 125%; */
 :root {
-  font-family: "Poppins";
+  font-family: "Mona Sans", "Poppins";
 }
 /* :root {
   --max-width: 1100px;
@@ -107,7 +107,8 @@ body {
 .outer-body {
   position: relative;
   width: 100vw;
-  background-color: #13005a;
+  /* background-color: #13005a; */
+  background-color: #000632;
   overflow: hidden;
   margin: 0;
   padding: 0;

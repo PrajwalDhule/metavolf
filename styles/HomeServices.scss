@@ -1,7 +1,7 @@
 $cyan: #a7ffef;
 $bg-dark-blue: #000632;
 $dark-blue: #080e41;
-$dark-blue-2: #0b1457;
+$dark-blue-2: #111c68;
 
 // @font-face {
 //   font-family: "mona-sansbold";
@@ -82,35 +82,14 @@ $dark-blue-2: #0b1457;
       font-weight: 600;
       margin-top: 0.5em;
       width: 100%;
-      // & > div {
-      //   width: 50%;
-      //   font-weight: 200;
-      // }
-      // & > div:nth-child(1) {
-      //   margin-inline: 0 auto;
-      //   display: flex;
-      //   justify-content: right;
-      //   align-items: center;
-      //   line-height: 0.6;
-      //   div {
-      //     border-radius: 50%;
-      //     width: 0.3em;
-      //     aspect-ratio: 1;
-      //     background-color: $cyan;
-      //     margin-right: 0.4em;
-      //   }
-      // }
-      // & > div:nth-child(2) {
-      //   text-align: left;
-      //   margin-inline: auto 0;
-      // }
     }
     .services {
       .service {
         width: 100%;
         margin-top: 3em;
-        background-color: $dark-blue;
-        border: 2px solid $dark-blue-2;
+        // background-color: $dark-blue;
+        background-color: #00073e;
+        border: 1.5px solid $dark-blue-2;
         display: flex;
         position: relative;
         left: 0;
@@ -147,7 +126,7 @@ $dark-blue-2: #0b1457;
           display: grid;
           place-items: center;
           text-align: center;
-          border-left: 2px solid $dark-blue-2;
+          border-left: 1.5px solid $dark-blue-2;
           transition: background-color 150ms ease-out;
           font-size: 1.5rem;
           font-weight: 100;
