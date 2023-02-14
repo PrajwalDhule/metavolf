@@ -7,6 +7,7 @@ import "../styles/WhyUs.css";
 // import "../styles/testimonial.css";
 import "../styles/mediaQueries.css";
 import "../styles/Footer.css";
+import "../styles/Demo.css";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

@@ -1,4 +1,4 @@
-nav {
+nav.navbar-main {
   position: absolute;
   top: 0;
   left: 0;
@@ -17,11 +17,11 @@ nav {
   z-index: 5;
 }
 
-nav img {
+nav.navbar-main img {
   height: 5vh;
 }
 
-nav .desktop-menu {
+nav.navbar-main .desktop-menu {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,24 +35,24 @@ nav .desktop-menu {
   color: white;
 }
 
-nav .desktop-menu li + li {
+nav.navbar-main .desktop-menu li + li {
   margin-left: 3em;
 }
 
-nav .hamburger-menu {
+nav.navbar-main .hamburger-menu {
   display: none;
   position: fixed;
   right: 5vw;
 }
 
-nav .hamburger-menu button {
+nav.navbar-main .hamburger-menu button {
   position: relative;
   z-index: 6;
   border: none;
   background-color: transparent;
 }
 
-nav .hamburger-menu .hamburger-icon {
+nav.navbar-main .hamburger-menu .hamburger-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -67,7 +67,7 @@ nav .hamburger-menu .hamburger-icon {
   height: 16px;
 }
 
-nav .hamburger-menu .hamburger-icon .hamburger-line {
+nav.navbar-main .hamburger-menu .hamburger-icon .hamburger-line {
   width: 100%;
   height: 2px;
   background-color: white;
@@ -80,37 +80,37 @@ nav .hamburger-menu .hamburger-icon .hamburger-line {
   transition: transform 0.3s ease-in-out, top ease-in-out 0.3s, bottom ease-in-out 0.3s, opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
-nav .hamburger-menu .hamburger-icon .hamburger-line:nth-child(1) {
+nav.navbar-main .hamburger-menu .hamburger-icon .hamburger-line:nth-child(1) {
   top: 0;
 }
 
-nav .hamburger-menu .hamburger-icon .hamburger-line:nth-child(2) {
+nav.navbar-main .hamburger-menu .hamburger-icon .hamburger-line:nth-child(2) {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
-nav .hamburger-menu .hamburger-icon .hamburger-line:nth-child(3) {
+nav.navbar-main .hamburger-menu .hamburger-icon .hamburger-line:nth-child(3) {
   bottom: 0;
 }
 
-nav .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(1) {
+nav.navbar-main .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(1) {
   -webkit-transform: rotate(45deg) translateY(-50%);
           transform: rotate(45deg) translateY(-50%);
   top: 50%;
 }
 
-nav .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(2) {
+nav.navbar-main .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(2) {
   opacity: 0;
 }
 
-nav .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(3) {
+nav.navbar-main .hamburger-menu .hamburger-icon.open .hamburger-line:nth-child(3) {
   -webkit-transform: rotate(-45deg) translateY(50%);
           transform: rotate(-45deg) translateY(50%);
   bottom: 50%;
 }
 
-nav .menu {
+nav.navbar-main .menu {
   position: fixed;
   height: 100vh;
   width: 100vw;
@@ -141,12 +141,12 @@ nav .menu {
   transition: clip-path 250ms ease-in-out, -webkit-clip-path 250ms ease-in-out;
 }
 
-nav .menu.open {
+nav.navbar-main .menu.open {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-nav .menu li {
+nav.navbar-main .menu li {
   list-style: none;
   color: white;
   text-align: center;
@@ -156,15 +156,15 @@ nav .menu li {
   font-size: 2rem;
 }
 
-nav .menu li + li {
+nav.navbar-main .menu li + li {
   margin-top: 1em;
 }
 
-nav li {
+nav.navbar-main li {
   position: relative;
 }
 
-nav li::after {
+nav.navbar-main li::after {
   content: "";
   position: absolute;
   left: 0;
@@ -183,7 +183,7 @@ nav li::after {
   transition: transform 250ms ease-in, -webkit-transform 250ms ease-in;
 }
 
-nav li:hover::after {
+nav.navbar-main li:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;

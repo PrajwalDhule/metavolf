@@ -13,14 +13,14 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav>
+    <nav className="navbar-main">
       <Link href="/">
         <img src="/logo.png" />
       </Link>
 
       <ul className="desktop-menu">
         <li>
-          <Link href="/">Services</Link>
+          <Link href="/Demo">Services</Link>
         </li>
         <li>
           <Link href="/">About us</Link>
