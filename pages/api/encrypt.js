@@ -1,12 +1,13 @@
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { db } from "../../firebase/clientApp";
+import {clientCollection} from "../../constants/firebase_constants.js";
 import bcrypt, { matches } from "bcrypt";
 
 export default async function handler(req, res) {
   const { email, password } = req.body;
   try {
     // const encryptedPassword = await bcrypt.hash(password, 16);
-    var collectionRef = collection(db, "clientAuth");
+    var collectionRef = collection(db,clientCollection);
     const queryRef = query(collectionRef, where("email", "==", email));
     const snapshot = await getDocs(queryRef);
     if (snapshot.empty) {
