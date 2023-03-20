@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/global.css";
 import "../styles/Login.css";
 import "../styles/Navbar.css";
 import "../styles/Hero.css";
