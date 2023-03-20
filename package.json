@@ -27,4 +27,8 @@
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
   }
+  "main": "index.js",
+  "repository": "https://github.com/PrajwalDhule/metavolf.git",
+  "author": "piush-terminalwitchcraft <piushpaul.16@gmail.com>",
+  "license": "MIT"
 }
