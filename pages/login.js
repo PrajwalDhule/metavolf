@@ -23,7 +23,7 @@ function Login() {
         return signInWithEmailAndPassword(auth,email,password).then(
           (credential)=>{
             // console.log(credential);
-            // console.log();
+            // console.log(); 
             console.log(auth.currentUser.uid);
           }
         ).catch((error)=>{
