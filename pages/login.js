@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { setPersistence, browserLocalPersistence, signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase/clientApp";
+// import { auth } from "firebase-admin";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -11,11 +14,28 @@ function Login() {
     console.log("email:", email);
     console.log("password:", password);
     // get encrypted password from the server and pass password as a parameter
-    const encryptedPassword = await axios.post("/api/encrypt", {
-      email: email,
-      password: password,
+    // const encryptedPassword = await axios.post("/api/encrypt", {
+    //   email: email,
+    //   password: password,
+    // });
+    setPersistence(auth,browserLocalPersistence).then(
+      ()=>{
+        return signInWithEmailAndPassword(auth,email,password).then(
+          (credential)=>{
+            // console.log(credential);
+            // console.log(); 
+            console.log(auth.currentUser.uid);
+          }
+        ).catch((error)=>{
+          // TODO: handle error 
+          console.log(error);
+        });
+      }
+    ).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
     });
-    console.log("Message :", encryptedPassword.data);
   };
 
   return (
