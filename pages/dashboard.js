@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { async } from "@firebase/util";
+import axios from "axios";
 
 const dashboard = () => {
+  const [email, setEmail] = useState("piushpaul.16@gmail.com");
+  let handleClick = async (event) => {
+    event.preventDefault();
+    // const data = {
+
+    // };
+
+    axios
+      .get("http://localhost:3000/api/services", {
+        email: "piushpaul.16@gmail.com",
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div>
       <nav
@@ -72,7 +93,9 @@ const dashboard = () => {
       <main>
         <section className="bg-[#00163b] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[64vw] px-8 py-6 mb-4 top-[5vh] overflow-x-hidden border-[1px] border-[#c8c8c8]">
           <div className="max-w-[60%]">
-            <h2 className="text-3xl">Service name</h2>
+            <h2 className="text-3xl" onClick={handleClick}>
+              Service name
+            </h2>
             <p className="font-light my-2">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
