@@ -183,54 +183,82 @@ const dashboard = ({ initialServiceData, allData }) => {
       >
         <div className="container nav-container flex relative justify-left pt-[3vh] pl-[1.5vw]">
           <ul className="menu-items">
-            <li className="mt-[.5rem] mb-[.5rem]">
-              <Link className="link logo" href="/">
-                <div>{/* <img src={logo} /> */}</div>
+            <li className="mb-3">
+              <Link className="link icons flex" href="/">
+                <div>
+                  <img src="/star.svg" className="w-5 mr-2" />
+                </div>
+                <p className="">Pending</p>
               </Link>
             </li>
+            {data &&
+              data.map((service) => {
+                <li className="mb-3" key={service.serviceID}>
+                  <Link
+                    className="link icons"
+                    href="/notifications"
+                    onClick={() => {
+                      setServiceID(service.serviceID);
+                    }}
+                  >
+                    <div>{/* <img src={bell} /> */}</div>
+                    <p>{service.serviceName}</p>
+                  </Link>
+                </li>;
+              })}
 
-            <li>
-              <Link className="link icons" href="/">
-                <div>{/* <img src={home} /> */}</div>
-                <p className="w-0">Feed</p>
-              </Link>
-            </li>
-            <li>
-              {/* <Link className="link icons" href="/"> */}
-              <a
-                className="link icons"
-                // onClick={hideNavText}
-              >
-                <div>{/* <img src={search} /> */}</div>
-                <p>Search</p>
-              </a>
-              {/* </Link> */}
-            </li>
-            <li>
-              <Link className="link icons" href="/notices">
-                <div>{/* <img src={notice} /> */}</div>
-                <p>Notices</p>
-              </Link>
-            </li>
-            <li>
-              <Link className="link icons" href="/notifications">
-                <div>{/* <img src={bell} /> */}</div>
-                <p>Notifications</p>
-              </Link>
-            </li>
-            <li>
-              <Link className="link icons" href="/createpost">
+            <li className="mb-3">
+              <Link className="link icons " href="/createpost">
                 <div>{/* <img src={plus} /> */}</div>
-                <p>Create</p>
+                <p>service 2</p>
               </Link>
             </li>
 
-            <li>
+            <li className="mb-3">
               <Link className="link icons" href="/profile">
                 <div className="profile-icon">
                   {/* <img src={props.image} /> */}
                 </div>
-                <p>Profile</p>
+                <p>service 3</p>
+              </Link>
+            </li>
+            <li className=" mb-3">
+              <Link className="link icons flex" href="/notices">
+                <div>
+                  <img src="/star.svg" className="w-5 mr-2" />
+                </div>
+                <p>Fulfilled</p>
+              </Link>
+            </li>
+            {data &&
+              data.map((service) => {
+                <li className="mb-3" key={service.serviceID}>
+                  <Link
+                    className="link icons"
+                    href="/notifications"
+                    onClick={() => {
+                      setServiceID(service.serviceID);
+                    }}
+                  >
+                    <div>{/* <img src={bell} /> */}</div>
+                    <p>{service.serviceName}</p>
+                  </Link>
+                </li>;
+              })}
+
+            <li className="mb-3">
+              <Link className="link icons " href="/createpost">
+                <div>{/* <img src={plus} /> */}</div>
+                <p>service 2</p>
+              </Link>
+            </li>
+
+            <li className="mb-3">
+              <Link className="link icons" href="/profile">
+                <div className="profile-icon">
+                  {/* <img src={props.image} /> */}
+                </div>
+                <p>service 3</p>
               </Link>
             </li>
           </ul>
