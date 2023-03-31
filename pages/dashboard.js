@@ -3,35 +3,55 @@ import Link from "next/link";
 import { async } from "@firebase/util";
 import axios from "axios";
 
-const dashboard = () => {
-  const [email, setEmail] = useState("piushpaul.16@gmail.com");
-  let handleClick = async (event) => {
-    event.preventDefault();
-    // const data = {
+const dashboard = ({ initialServiceData, allData }) => {
+  const [serviceID, setServiceID] = useState("");
+  const [data, setData] = useState(allData);
+  const [serviceData, setServiceData] = useState(initialServiceData);
 
-    // };
+  // let handleClick = async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const response = await axios.post("/api/services", {
+  //       email: email,
+  //     });
+  //     console.log(response.data);
+  //     setData(response.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-    axios
-      .get("http://localhost:3000/api/services", {
-        email: "piushpaul.16@gmail.com",
-      })
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+  // useEffect(async (event) => {
+  //   event.preventDefault();
+  //   try {
+  //     const response = await axios.post("/api/services", {
+  //       email: email,
+  //     });
+  //     console.log(response.data);
+
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, [])
+
+  useEffect(() => {
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].serviceID == serviceID) {
+        setServiceData(data[i]);
+        break;
+      }
+    }
+  }, [serviceID]);
 
   return (
-    <div>
+    <div className="bg-[#161b26] ">
       <nav
-        className="bg-[#00163b]  fixed z-3 w-[16vw] h-[90vh] left-[1vw] top-[5vh] border-[1px] border-[#c8c8c8]"
+        className="bg-[#141922]  fixed z-3 w-[16vw] h-[90vh] left-[1vw] top-[5vh] shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md"
         id="left-bar"
       >
         <div className="container nav-container flex relative justify-left pt-[3vh] pl-[1.5vw]">
-          <ul className="menu-items">
-            <li className="mt-[.5rem] mb-[.5rem]">
+          <ul className="menu-items text-sm">
+            <li className="mt-[.5rem] mb-6">
               <Link className="link logo" href="/">
                 <div>
                   <img
@@ -43,13 +63,15 @@ const dashboard = () => {
               </Link>
             </li>
 
-            <li>
-              <Link className="link icons" href="/">
-                <div>{/* <img src={home} /> */}</div>
-                <p className="w-0">Current Service</p>
+            <li className="mb-3">
+              <Link className="link icons flex" href="/">
+                <div>
+                  <img src="/star.svg" className="w-5 mr-2" />
+                </div>
+                <p className="">Current Service</p>
               </Link>
             </li>
-            <li>
+            <li className="mb-6">
               {/* <Link className="link icons" href="/"> */}
               <a
                 className="link icons"
@@ -60,26 +82,38 @@ const dashboard = () => {
               </a>
               {/* </Link> */}
             </li>
-            <li>
-              <Link className="link icons" href="/notices">
-                <div>{/* <img src={notice} /> */}</div>
+            <li className=" mb-3">
+              <Link className="link icons flex" href="/notices">
+                <div>
+                  <img src="/heart.svg" className="w-5 mr-2" />
+                </div>
                 <p>For you</p>
               </Link>
             </li>
-            <li>
-              <Link className="link icons" href="/notifications">
-                <div>{/* <img src={bell} /> */}</div>
-                <p>service 1</p>
-              </Link>
-            </li>
-            <li>
-              <Link className="link icons" href="/createpost">
+            {data &&
+              data.map((service) => {
+                <li className="mb-3" key={service.serviceID}>
+                  <Link
+                    className="link icons"
+                    href="/notifications"
+                    onClick={() => {
+                      setServiceID(service.serviceID);
+                    }}
+                  >
+                    <div>{/* <img src={bell} /> */}</div>
+                    <p>{service.serviceName}</p>
+                  </Link>
+                </li>;
+              })}
+
+            <li className="mb-3">
+              <Link className="link icons " href="/createpost">
                 <div>{/* <img src={plus} /> */}</div>
                 <p>service 2</p>
               </Link>
             </li>
 
-            <li>
+            <li className="mb-3">
               <Link className="link icons" href="/profile">
                 <div className="profile-icon">
                   {/* <img src={props.image} /> */}
@@ -90,13 +124,11 @@ const dashboard = () => {
           </ul>
         </div>
       </nav>
-      <main>
-        <section className="bg-[#00163b] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[64vw] px-8 py-6 mb-4 top-[5vh] overflow-x-hidden border-[1px] border-[#c8c8c8]">
+      <main className="overflow-y-hidden">
+        <section className="bg-[#141922] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[60vw] px-10 py-8 mb-4 top-[5vh] overflow-x-hidden shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md">
           <div className="max-w-[60%]">
-            <h2 className="text-3xl" onClick={handleClick}>
-              Service name
-            </h2>
-            <p className="font-light my-2">
+            <h2 className="text-3xl">{serviceData.serviceName}</h2>
+            <p className="font-light my-2  text-sm">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
@@ -110,10 +142,10 @@ const dashboard = () => {
             </div>
           </div>
         </section>
-        <section className="bg-[#00163b] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[64vw] px-8 py-6 mb-4 top-[5vh] overflow-x-hidden border-[1px] border-[#c8c8c8]">
+        <section className="bg-[#141922] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[60vw] px-10 py-8 mb-4 top-[5vh] overflow-x-hidden shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md">
           <div className="max-w-[60%]">
             <h2 className="text-3xl">Service name</h2>
-            <p className="font-light my-2">
+            <p className="font-light my-3 text-sm">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
@@ -127,10 +159,10 @@ const dashboard = () => {
             </div>
           </div>
         </section>
-        <section className="bg-[#00163b] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[64vw] px-8 py-6 mb-4 top-[5vh] overflow-x-hidden border-[1px] border-[#c8c8c8]">
+        <section className="bg-[#141922] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[60vw] px-10 py-8 mb-4 top-[5vh] overflow-x-hidden shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md">
           <div className="max-w-[60%]">
             <h2 className="text-3xl">Service name</h2>
-            <p className="font-light my-2">
+            <p className="font-light my-3 text-sm">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
               point of using Lorem Ipsum is that it has a more-or-less normal
@@ -146,7 +178,7 @@ const dashboard = () => {
         </section>
       </main>
       <nav
-        className="bg-[#00163b]  fixed z-3 w-[16vw] h-[90vh] right-[1vw] top-[5vh] border-[1px] border-[#c8c8c8]"
+        className="bg-[#141922]  fixed z-3 w-[16vw] h-[90vh] right-[1vw] top-[5vh] shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md"
         id="left-bar"
       >
         <div className="container nav-container flex relative justify-left pt-[3vh] pl-[1.5vw]">
@@ -209,3 +241,37 @@ const dashboard = () => {
 };
 
 export default dashboard;
+
+export async function getServerSideProps(context) {
+  // const [initialServiceData, setInitialServiceData] = useState([]);
+  // const [allData, setAllData] = useState([]);
+  console.log("hello");
+  const email = "piushpaul.16@gmail.com";
+  let initialServiceData = [];
+  let allData = [];
+  try {
+    const response = await axios.post("/api/services", {
+      email: email,
+    });
+    console.log(response.data);
+    // setInitialServiceData(response.data[0]);
+    // setAllData(response.data);
+    initialServiceData = response.data[0];
+    allData = response.data;
+    console.log(response.data[0], "hello");
+    return {
+      props: {
+        initialServiceData: initialServiceData,
+        allData: allData,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+    return {
+      props: {
+        initialServiceData: [],
+        allData: [],
+      },
+    };
+  }
+}
