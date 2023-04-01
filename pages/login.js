@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import { useRouter } from "next/router";
 import { setPersistence, browserLocalPersistence, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase/clientApp";
 // import { auth } from "firebase-admin";
@@ -8,34 +9,41 @@ import { auth } from "../firebase/clientApp";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  var handleSubmit = async (event) => {
+  const router = useRouter();
+  // var handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   console.log("email:", email);
+  //   console.log("password:", password);
+  //   setPersistence(auth,browserLocalPersistence).then(
+  //     ()=>{
+  //       return signInWithEmailAndPassword(auth,email,password).then(
+  //         (credential)=>{
+  //           // console.log(credential);
+  //           // console.log(); 
+  //           console.log(auth.currentUser.uid);
+  //           router.push("/dashboard");
+  //         }
+  //       ).catch((error)=>{
+  //         // TODO: handle error 
+  //         console.log(error);
+  //       });
+  //     }
+  //   ).catch((error) => {
+  //     // Handle Errors here.
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //   });
+  // };
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("email:", email);
-    console.log("password:", password);
-    // get encrypted password from the server and pass password as a parameter
-    // const encryptedPassword = await axios.post("/api/encrypt", {
-    //   email: email,
-    //   password: password,
-    // });
-    setPersistence(auth,browserLocalPersistence).then(
-      ()=>{
-        return signInWithEmailAndPassword(auth,email,password).then(
-          (credential)=>{
-            // console.log(credential);
-            // console.log(); 
-            console.log(auth.currentUser.uid);
-          }
-        ).catch((error)=>{
-          // TODO: handle error 
-          console.log(error);
-        });
-      }
-    ).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+
+    try { 
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log(userCredential.user.uid);
+      router.push("/dashboard");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (

@@ -1,7 +1,19 @@
 import Link from "next/link";
 import Navbar from "./nav";
-
+import axios from 'axios';
 export default function Hero() {
+  var ClickHua = async(event) => {
+    console.log("Hua");
+    try {
+      const response = await axios.post("/api/services", {
+      email: "piushpaul.16@gmail.com",
+      });
+      console.log(response);
+    } catch (error) {
+        console.log(error);
+    }
+
+  }
   return (
     <div className="hero-body">
       {/* <div class="m-scroll">
@@ -46,7 +58,7 @@ export default function Hero() {
           Innovate solutions to drive growth, cut costs and stay ahead of the
           competition.
         </p>
-        <div className="btn-container">
+        <div className="btn-container" onClick={ClickHua}>
           <Link href="/">
             <button>Explore Services</button>
           </Link>
