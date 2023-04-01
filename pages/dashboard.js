@@ -8,6 +8,8 @@ const Dashboard = ({ initialServiceData, allData }) => {
   const [data, setData] = useState(allData);
   const [serviceData, setServiceData] = useState(initialServiceData);
 
+  console.log(serviceData, " function ", data);
+
   // let handleClick = async (event) => {
   //   event.preventDefault();
   //   try {
@@ -78,12 +80,12 @@ const Dashboard = ({ initialServiceData, allData }) => {
                 // onClick={hideNavText}
               >
                 <div>{/* <img src={search} /> */}</div>
-                <p>Service name</p>
+                <p>{serviceData.serviceName}</p>
               </a>
               {/* </Link> */}
             </li>
             <li className=" mb-3">
-              <Link className="link icons flex" href="/notices">
+              <Link className="link icons flex" href="/">
                 <div>
                   <img src="/heart.svg" className="w-5 mr-2" />
                 </div>
@@ -92,29 +94,33 @@ const Dashboard = ({ initialServiceData, allData }) => {
             </li>
             {data &&
               data.map((service) => {
-                <li className="mb-3" key={service.serviceID}>
-                  <Link
-                    className="link icons"
-                    href="/notifications"
-                    onClick={() => {
-                      setServiceID(service.serviceID);
-                    }}
-                  >
-                    <div>{/* <img src={bell} /> */}</div>
-                    <p>{service.serviceName}</p>
-                  </Link>
-                </li>;
+                return service.serviceID != serviceData.serviceID ? (
+                  <li className="mb-3" key={service.serviceID}>
+                    <Link
+                      className="link icons"
+                      href="/"
+                      onClick={() => {
+                        setServiceID(service.serviceID);
+                      }}
+                    >
+                      <div>{/* <img src={bell} /> */}</div>
+                      <p>{service.serviceName}</p>
+                    </Link>
+                  </li>
+                ) : (
+                  ""
+                );
               })}
 
             <li className="mb-3">
-              <Link className="link icons " href="/createpost">
+              <Link className="link icons " href="/">
                 <div>{/* <img src={plus} /> */}</div>
                 <p>service 2</p>
               </Link>
             </li>
 
             <li className="mb-3">
-              <Link className="link icons" href="/profile">
+              <Link className="link icons" href="/">
                 <div className="profile-icon">
                   {/* <img src={props.image} /> */}
                 </div>
@@ -271,6 +277,10 @@ const Dashboard = ({ initialServiceData, allData }) => {
 export default Dashboard;
 
 export async function getServerSideProps(context) {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL; // Get the base URL of your app
+  const apiEndpoint = "/api/services"; // The path to your API endpoint
+  const url = `${baseUrl}${apiEndpoint}`; // Concatenate the base URL and the API endpoint path
+
   // const [initialServiceData, setInitialServiceData] = useState([]);
   // const [allData, setAllData] = useState([]);
   console.log("hello");
@@ -278,15 +288,18 @@ export async function getServerSideProps(context) {
   let initialServiceData = [];
   let allData = [];
   try {
-    const response = await axios.post("/api/services", {
+    const response = await axios.post(url, {
       email: email,
     });
-    console.log(response.data);
+    console.log(response.data.data);
     // setInitialServiceData(response.data[0]);
     // setAllData(response.data);
-    initialServiceData = response.data[0];
-    allData = response.data;
-    // console.log(response.data[0], "hello");
+    console.log(response.data.data[0], "hello");
+    // if (response.data && response.data.length > 0) {
+    // }
+    initialServiceData = response.data.data[0];
+    allData = response.data.data;
+
     return {
       props: {
         initialServiceData: initialServiceData,
@@ -294,7 +307,7 @@ export async function getServerSideProps(context) {
       },
     };
   } catch (error) {
-    console.log(error);
+    console.log("error: ", error);
     return {
       props: {
         initialServiceData: [],
