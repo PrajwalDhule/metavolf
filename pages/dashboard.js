@@ -3,7 +3,7 @@ import Link from "next/link";
 import { async } from "@firebase/util";
 import axios from "axios";
 
-const dashboard = ({ initialServiceData, allData }) => {
+const Dashboard = ({ initialServiceData, allData }) => {
   const [serviceID, setServiceID] = useState("");
   const [data, setData] = useState(allData);
   const [serviceData, setServiceData] = useState(initialServiceData);
@@ -268,7 +268,7 @@ const dashboard = ({ initialServiceData, allData }) => {
   );
 };
 
-export default dashboard;
+export default Dashboard;
 
 export async function getServerSideProps(context) {
   // const [initialServiceData, setInitialServiceData] = useState([]);
@@ -286,7 +286,7 @@ export async function getServerSideProps(context) {
     // setAllData(response.data);
     initialServiceData = response.data[0];
     allData = response.data;
-    console.log(response.data[0], "hello");
+    // console.log(response.data[0], "hello");
     return {
       props: {
         initialServiceData: initialServiceData,
