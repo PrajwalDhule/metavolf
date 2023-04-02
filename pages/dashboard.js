@@ -1,49 +1,64 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { async } from "@firebase/util";
 import axios from "axios";
-
-const Dashboard = ({ initialServiceData, allData }) => {
-  const [serviceID, setServiceID] = useState("");
-  const [data, setData] = useState(allData);
-  const [serviceData, setServiceData] = useState(initialServiceData);
-
-  console.log(serviceData, " function ", data);
-
-  // let handleClick = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const response = await axios.post("/api/services", {
-  //       email: email,
-  //     });
-  //     console.log(response.data);
-  //     setData(response.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const response = await axios.post("/api/services", {
-  //       email: email,
-  //     });
-  //     console.log(response.data);
-
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }, [])
+import { auth } from "../firebase/clientApp";
+import { onAuthStateChanged } from "firebase/auth";
+const Dashboard = () => {
+  const [serviceData, setServiceData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [userEmail, setUserEmail] = useState(null);
+  // const [user, loadinguser, error] = useAuthState(auth);
 
   useEffect(() => {
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].serviceID == serviceID) {
-        setServiceData(data[i]);
-        break;
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setLoading(false);
+        setUserEmail(user.email);
       }
+    });
+
+    if (auth.currentUser) {
+      //setLoading(false);
+      //setUserEmail(auth.currentUser.email);
+      //console.log(auth.currentUser.uid);
+      axios
+        .post("/api/services", {
+          email: auth.currentUser.email,
+        })
+        .then((res) => {
+          console.log(res.data.data);
+          setServiceData(res.data.data);
+
+          // console.log(serviceData[0].serviceDescription);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+
+      axios
+        .post("/api/services", {
+          email: auth.currentUser.email,
+        })
+        .then((res) => {
+          console.log(res.data.data);
+          setServiceData(res.data.data);
+
+          // console.log(serviceData[0].serviceDescription);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     }
-  }, [serviceID]);
+  }, [auth.currentUser]);
+  if (auth.currentUser === null) {
+    return <div>not logged in</div>;
+  }
+  if (loading) {
+    return <div>loading...</div>;
+  }
+  if (!serviceData) {
+    return <div>no service</div>;
+  }
 
   return (
     <div className="bg-[#161b26] ">
@@ -80,7 +95,7 @@ const Dashboard = ({ initialServiceData, allData }) => {
                 // onClick={hideNavText}
               >
                 <div>{/* <img src={search} /> */}</div>
-                <p>{serviceData.serviceName}</p>
+                {/* <p>{serviceData.serviceName}</p> */}
               </a>
               {/* </Link> */}
             </li>
@@ -92,25 +107,6 @@ const Dashboard = ({ initialServiceData, allData }) => {
                 <p>For you</p>
               </Link>
             </li>
-            {data &&
-              data.map((service) => {
-                return service.serviceID != serviceData.serviceID ? (
-                  <li className="mb-3" key={service.serviceID}>
-                    <Link
-                      className="link icons"
-                      href="/"
-                      onClick={() => {
-                        setServiceID(service.serviceID);
-                      }}
-                    >
-                      <div>{/* <img src={bell} /> */}</div>
-                      <p>{service.serviceName}</p>
-                    </Link>
-                  </li>
-                ) : (
-                  ""
-                );
-              })}
 
             <li className="mb-3">
               <Link className="link icons " href="/">
@@ -133,9 +129,9 @@ const Dashboard = ({ initialServiceData, allData }) => {
       <main className="overflow-y-hidden">
         <section className="bg-[#141922] relative left-1/2 translate-x-[-49.5%] flex justify-between w-[60vw] px-10 py-8 mb-4 top-[5vh] overflow-x-hidden shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md">
           <div className="max-w-[60%]">
-            <h2 className="text-3xl">{serviceData.serviceName}</h2>
+            {/* <h2 className="text-3xl">{serviceData.serviceName}</h2> */}
             <p className="font-light my-2  text-sm">
-              {serviceData.serviceDescription}
+              {serviceData[0].serviceDescription}
             </p>
           </div>
           <div>
@@ -194,20 +190,23 @@ const Dashboard = ({ initialServiceData, allData }) => {
                 <p className="">Pending</p>
               </Link>
             </li>
-            {data &&
-              data.map((service) => {
-                <li className="mb-3" key={service.serviceID}>
-                  <Link
-                    className="link icons"
-                    href="/notifications"
-                    onClick={() => {
-                      setServiceID(service.serviceID);
-                    }}
-                  >
-                    <div>{/* <img src={bell} /> */}</div>
-                    <p>{service.serviceName}</p>
-                  </Link>
-                </li>;
+
+            {serviceData &&
+              serviceData.map((service) => {
+                return (
+                  <li className="mb-3" key={service.serviceID}>
+                    <Link
+                      className="link icons"
+                      href="/notifications"
+                      onClick={() => {
+                        setServiceID(service.serviceID);
+                      }}
+                    >
+                      <div>{/* <img src={bell} /> */}</div>
+                      <p>{service.serviceName}</p>
+                    </Link>
+                  </li>
+                );
               })}
 
             <li className="mb-3">
@@ -233,21 +232,6 @@ const Dashboard = ({ initialServiceData, allData }) => {
                 <p>Fulfilled</p>
               </Link>
             </li>
-            {data &&
-              data.map((service) => {
-                <li className="mb-3" key={service.serviceID}>
-                  <Link
-                    className="link icons"
-                    href="/notifications"
-                    onClick={() => {
-                      setServiceID(service.serviceID);
-                    }}
-                  >
-                    <div>{/* <img src={bell} /> */}</div>
-                    <p>{service.serviceName}</p>
-                  </Link>
-                </li>;
-              })}
 
             <li className="mb-3">
               <Link className="link icons " href="/createpost">
@@ -272,39 +256,3 @@ const Dashboard = ({ initialServiceData, allData }) => {
 };
 
 export default Dashboard;
-
-export async function getServerSideProps(context) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL; // Get the base URL of your app
-  const apiEndpoint = "/api/services"; // The path to your API endpoint
-  const url = `${baseUrl}${apiEndpoint}`; // Concatenate the base URL and the API endpoint path
-
-  const email = "piushpaul.16@gmail.com";
-  let initialServiceData = [];
-  let allData = [];
-  try {
-    const response = await axios.post(url, {
-      email: email,
-    });
-    console.log(response.data.data);
-    console.log(response.data.data[0], "hello");
-    // if (response.data && response.data.length > 0) {
-    // }
-    initialServiceData = response.data.data[0];
-    allData = response.data.data;
-
-    return {
-      props: {
-        initialServiceData: initialServiceData,
-        allData: allData,
-      },
-    };
-  } catch (error) {
-    console.log("error: ", error);
-    return {
-      props: {
-        initialServiceData: [],
-        allData: [],
-      },
-    };
-  }
-}
