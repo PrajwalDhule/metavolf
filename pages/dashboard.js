@@ -80,7 +80,7 @@ const Dashboard = () => {
                 </div>
               </Link>
             </li>
-            <div className="h-[1px] my-4 mr-[1.5vw] bg-[#ffffff] opacity-[20%]"></div>
+            <div className="h-[1px] my-4 w-[17vw] bg-[#ffffff] opacity-[20%]"></div>
             <li className="my-3">
               <p className="text-base font-semibold">Current Services</p>
             </li>
@@ -88,7 +88,7 @@ const Dashboard = () => {
               serviceData.map((service, index) => {
                 return service.serviceID != serviceData.serviceID ? (
                   <li
-                    className={`mb-3 mr-[1.5vw] cursor-pointer text-sm px-2 py-1 rounded-sm ${
+                    className={`mb-3 mr-[1.5vw] cursor-pointer text-sm px-3 py-2 rounded-sm ${
                       service == singleServiceData ||
                       (index == 0 && !singleServiceData)
                         ? "bg-[#2c2c2c]"
@@ -106,7 +106,7 @@ const Dashboard = () => {
                   ""
                 );
               })}
-            <div className="h-[1px] my-4 mr-[1.5vw] bg-[#ffffff] opacity-[20%]"></div>
+            <div className="h-[1px] my-4 w-[17vw] bg-[#ffffff] opacity-[20%]"></div>
             <li className="my-3">
               <p className="text-base font-semibold">For you</p>
             </li>
@@ -137,8 +137,8 @@ const Dashboard = () => {
       </nav>
       <main className="overflow-y-hidden">
         <section className="bg-[#141922] relative left-1/2 translate-x-[-50%] flex justify-between w-[54vw] px-10 py-8 mb-4 top-[5vh] overflow-x-hidden shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md">
-          <div className="max-w-[60%]">
-            <h2 className="text-3xl">
+          <div className="max-w-[67%]">
+            <h2 className="text-3xl font-bold">
               {singleServiceData
                 ? singleServiceData.serviceName
                 : serviceData[0].serviceName}
@@ -152,13 +152,19 @@ const Dashboard = () => {
           <div>
             <p className="text-green-500">active</p>
             <div className="mt-4">
-              Progress: <p className="text-3xl">60%</p>
+              Progress:{" "}
+              <p className="text-3xl">
+                {singleServiceData
+                  ? singleServiceData.serviceProgress
+                  : serviceData[0].serviceProgress}{" "}
+                %
+              </p>
             </div>
           </div>
         </section>
         <section className="bg-[#141922] relative left-1/2 translate-x-[-50%] flex justify-between w-[54vw] px-10 py-8 mb-4 top-[5vh] overflow-x-hidden shadow-[rgba(0,_0,_0,_1)_0px_30px_90px] rounded-md">
           <div className="max-w-[60%]">
-            <h2 className="text-3xl">Payment</h2>
+            <h2 className="text-3xl font-medium">Payment</h2>
             <p className="font-light my-3 text-sm">
               It is a long established fact that a reader will be distracted by
               the readable content of a page when looking at its layout. The
@@ -167,7 +173,7 @@ const Dashboard = () => {
             </p>
           </div>
           <div>
-            <p className="text-green-500">active</p>
+            {/* <p className="text-green-500">active</p> */}
             <div className="mt-4">
               Progress: <p className="text-3xl">60%</p>
             </div>
@@ -183,66 +189,60 @@ const Dashboard = () => {
             <li className="mt-[.5rem] mb-6">
               <Link className="link logo" href="/">
                 <div>
-                  <img
+                  {/* <img
                     src="/logo.png"
                     alt="hypersales logo"
                     className="w-4/5"
-                  />
+                  /> */}
+                  <p className="text-xl font-medium">Prajwal Dhule</p>
                 </div>
               </Link>
             </li>
-            <div className="h-[1px] my-4 mr-[1.5vw] bg-[#ffffff] opacity-[20%]"></div>
+            <div className="h-[1px] my-4 w-[17vw] bg-[#ffffff] opacity-[20%]"></div>
             <li className="my-3">
-              <p className="text-base font-semibold">Current Services</p>
+              <p className="text-base font-semibold">Pending</p>
             </li>
-            {serviceData &&
-              serviceData.map((service, index) => {
-                return service.serviceID != serviceData.serviceID ? (
-                  <li
-                    className={`mb-3 mr-[1.5vw] cursor-pointer text-sm px-2 py-1 rounded-sm ${
-                      service == singleServiceData ||
-                      (index == 0 && !singleServiceData)
-                        ? "bg-[#2c2c2c]"
-                        : ""
-                    }`}
-                    key={service.serviceID}
-                    onClick={() => {
-                      setSingleServiceData(service);
-                    }}
-                  >
-                    <div>{/* <img src={bell} /> */}</div>
-                    <p>{service.serviceName}</p>
-                  </li>
-                ) : (
-                  ""
-                );
-              })}
-            <div className="h-[1px] my-4 mr-[1.5vw] bg-[#ffffff] opacity-[20%]"></div>
+            {(singleServiceData
+              ? singleServiceData
+              : serviceData[0]
+            ).serviceTasks.map((task, index) => {
+              return (
+                <li
+                  className="mb-3 mr-[1.5vw] cursor-pointer text-sm px-2 py-1 rounded-sm 
+                    "
+                  key={index}
+                  // onClick={() => {
+                  //   setSingleServiceData(task);
+                  // }}
+                >
+                  <div>{/* <img src={bell} /> */}</div>
+                  <p>{task}</p>
+                </li>
+              );
+            })}
+            <div className="h-[1px] my-4 w-[17vw] bg-[#ffffff] opacity-[20%]"></div>
             <li className="my-3">
-              <p className="text-base font-semibold">For you</p>
+              <p className="text-base font-semibold">Fulfilled</p>
             </li>
 
-            <li className="mb-3 mr-[1.5vw] px-2 py-1 rounded-sm ">
-              <Link className="link icons " href="/">
-                <div>{/* <img src={plus} /> */}</div>
-                <p>service 1</p>
-              </Link>
-            </li>
-            <li className="mb-3 mr-[1.5vw] px-2 py-1 rounded-sm ">
-              <Link className="link icons " href="/">
-                <div>{/* <img src={plus} /> */}</div>
-                <p>service 2</p>
-              </Link>
-            </li>
-
-            <li className="mb-3 mr-[1.5vw] px-2 py-1 rounded-sm ">
-              <Link className="link icons" href="/">
-                <div className="profile-icon">
-                  {/* <img src={props.image} /> */}
-                </div>
-                <p>service 3</p>
-              </Link>
-            </li>
+            {(singleServiceData
+              ? singleServiceData
+              : serviceData[0]
+            ).serviceTasks.map((task, index) => {
+              return (
+                <li
+                  className="mb-3 mr-[1.5vw] cursor-pointer text-sm px-2 py-1 rounded-sm 
+                    "
+                  key={index}
+                  // onClick={() => {
+                  //   setSingleServiceData(task);
+                  // }}
+                >
+                  <div>{/* <img src={bell} /> */}</div>
+                  <p>{task}</p>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </nav>
