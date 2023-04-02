@@ -278,9 +278,6 @@ export async function getServerSideProps(context) {
   const apiEndpoint = "/api/services"; // The path to your API endpoint
   const url = `${baseUrl}${apiEndpoint}`; // Concatenate the base URL and the API endpoint path
 
-  // const [initialServiceData, setInitialServiceData] = useState([]);
-  // const [allData, setAllData] = useState([]);
-  console.log("hello");
   const email = "piushpaul.16@gmail.com";
   let initialServiceData = [];
   let allData = [];
@@ -289,8 +286,6 @@ export async function getServerSideProps(context) {
       email: email,
     });
     console.log(response.data.data);
-    // setInitialServiceData(response.data[0]);
-    // setAllData(response.data);
     console.log(response.data.data[0], "hello");
     // if (response.data && response.data.length > 0) {
     // }
