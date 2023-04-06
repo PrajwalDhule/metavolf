@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import axios from "axios";
 import { auth } from "../firebase/clientApp";
@@ -8,8 +8,26 @@ const Dashboard = () => {
   const [singleServiceData, setSingleServiceData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [userEmail, setUserEmail] = useState(null);
-  const [percent, setPercent] = useState(60);
+  const [percent, setPercent] = useState(0);
   // const [user, loadinguser, error] = useAuthState(auth);
+  const pathRef = useRef(null);
+  const path = pathRef.current;
+
+  useEffect(() => {
+    // Get the total length of the path
+    if (path) {
+      const pathLength = path.getTotalLength();
+
+      // Set the initial dash values
+      path.style.strokeDasharray = pathLength;
+      path.style.strokeDashoffset = pathLength;
+
+      // Trigger the animation
+      path.style.animation = "none";
+      void path.offsetWidth; // Force reflow
+      path.style.animation = `dash 2s ease forwards`;
+    }
+  }, [singleServiceData]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -28,7 +46,7 @@ const Dashboard = () => {
           email: auth.currentUser.email,
         })
         .then((res) => {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           setServiceData(res.data.data);
 
           // console.log(serviceData[0].serviceDescription);
@@ -42,7 +60,7 @@ const Dashboard = () => {
           email: auth.currentUser.email,
         })
         .then((res) => {
-          console.log(res.data.data);
+          // console.log(res.data.data);
           setServiceData(res.data.data);
 
           // console.log(serviceData[0].serviceDescription);
@@ -59,7 +77,14 @@ const Dashboard = () => {
     return <div>loading...</div>;
   }
   if (!serviceData) {
-    return <div>no service</div>;
+    return (
+      <div className="flex gap-4 w-fit absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%]">
+        {/* animation-delay added in global.css */}
+        <div className="bg-blue-600 p-2  w-4 h-4 rounded-full animate-bounce blue-circle"></div>
+        <div className="bg-green-600 p-2 w-4 h-4 rounded-full animate-bounce green-circle"></div>
+        <div className="bg-red-600 p-2  w-4 h-4 rounded-full animate-bounce red-circle"></div>
+      </div>
+    );
   }
 
   return (
@@ -171,17 +196,27 @@ const Dashboard = () => {
                       cy="40"
                     />
                     <circle
-                      className="text-green-700"
+                      className="text-green-700 path"
                       strokeWidth="5"
-                      strokeDasharray="188.5"
-                      strokeDashoffset={
-                        188.5 -
-                        ((singleServiceData
-                          ? singleServiceData.serviceProgress
-                          : serviceData[0].serviceProgress) /
-                          100) *
-                          188.5
-                      }
+                      // strokeDasharray="188.5"
+                      // strokeDashoffset={
+                      //   188.5 -
+                      //   ((singleServiceData
+                      //     ? singleServiceData.serviceProgress
+                      //     : serviceData[0].serviceProgress) /
+                      //     100) *
+                      //     188.5
+                      // }
+                      ref={pathRef}
+                      style={{
+                        "--dash-offset":
+                          188.5 -
+                          ((singleServiceData
+                            ? singleServiceData.serviceProgress
+                            : serviceData[0].serviceProgress) /
+                            100) *
+                            188.5,
+                      }}
                       strokeLinecap="round"
                       stroke="currentColor"
                       fill="transparent"

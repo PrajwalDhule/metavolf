@@ -138,6 +138,30 @@ a {
   background-color: #000632;
 }
 
+.blue-circle {
+  animation-delay: 0.1s;
+}
+.green-circle {
+  animation-delay: 0.2s;
+}
+.red-circle {
+  animation-delay: 0.3s;
+}
+
+.path {
+  --dash-offset: /* Your target value here */ ;
+  stroke-dasharray: 188.5;
+  stroke-dashoffset: 188.5;
+  animation: dash 1s linear forwards;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: var(--dash-offset);
+    /* stroke-dasharray: 188.5; */
+  }
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 0;
